@@ -12,6 +12,7 @@ namespace IdentityServer
             {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
+                new IdentityResources.Email()
             };
         public static IEnumerable<ApiScope> GetApis() =>
             new List<ApiScope> {new ApiScope("Api_CodersShop")};
@@ -35,6 +36,7 @@ namespace IdentityServer
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Email,
                         "Api_CodersShop",
                     },
 

@@ -50,7 +50,7 @@ namespace IdentityServer.Controllers
 
                 var link = Url.Action(nameof(VerifyEmail), "Auth", new {userId = user.Id, code}, Request.Scheme, Request.Host.ToString());
 
-                await _mailerService.SendEmailAsync("andreas@butzhammer.de", "Email Verification - Coders Shop", $"<a href=\"{link}\">Verify Email</a>");
+                await _mailerService.SendEmailAsync(registerViewModel.Email, "Email Verification - Coders Shop", $"<a href=\"{link}\">Verify Email</a>");
 
                 return RedirectToAction("EmailVerification");
             }

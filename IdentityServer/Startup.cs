@@ -69,7 +69,6 @@ namespace IdentityServer
                 {
                     config.ClientId = _config["AuthClients:Google:ClientId"];
                     config.ClientSecret = _config["AuthClients:Google:ClientSecret"];
-                    config.ClaimActions.MapJsonKey("urn:facebook:email", "email", "string");
                 });
 
             services.Configure<SmtpSettings>(_config.GetSection("SmtpSettings"));
@@ -105,13 +104,8 @@ namespace IdentityServer
                 var userManager = serviceScope.ServiceProvider
                     .GetRequiredService<UserManager<IdentityUser>>();
 
-                var user = new IdentityUser("bob");
+                var user = new IdentityUser("bob") {Email = "bob@gmail.com"};
                 userManager.CreateAsync(user, "Pass123$").GetAwaiter().GetResult();
-                userManager.AddClaimAsync(user, new Claim("rc.garndma", "big.cookie"))
-                    .GetAwaiter().GetResult();
-                userManager.AddClaimAsync(user,
-                        new Claim("rc.api.garndma", "big.api.cookie"))
-                    .GetAwaiter().GetResult();
             }
         }
     }
