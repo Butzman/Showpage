@@ -21,4 +21,27 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.7" />
     <PackageReference Include="NETCore.MailKit" Version="2.0.3" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SharedResource.en-US.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <DependentUpon>SharedResource.resx</DependentUpon>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\SharedResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\SharedResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SharedResource.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Resources\SharedResource.en-US.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SharedResource.en-US.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
 </Project>

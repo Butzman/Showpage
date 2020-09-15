@@ -1,20 +1,21 @@
+using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
-using System.Security.Claims;
+using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using IdentityServer.Data;
 using IdentityServer.Models;
+using IdentityServer.Resources;
 using IdentityServer.Services;
-using IdentityServer4;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
-using NETCore.MailKit.Extensions;
-using NETCore.MailKit.Infrastructure.Internal;
+using Microsoft.Extensions.Options;
 
 namespace IdentityServer
 {
@@ -31,9 +32,22 @@ namespace IdentityServer
 
         public void ConfigureServices(IServiceCollection services)
         {
-            var dbConnectionString = _config.GetConnectionString("DataBase");
+            services.AddCors(config =>
+                config.AddPolicy(
+                    "AllowAll",
+                    p =>
+                        p.AllowCredentials()
+                            .WithOrigins(
+                                "http://localhost:3000",
+                                "https://localhost:5001")
+                            .SetIsOriginAllowedToAllowWildcardSubdomains()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                )
+            );
 
-            services.AddDbContext<AppDbContext>(config => { config.UseSqlite(dbConnectionString); });
+
+            services.AddDbContext<AppDbContext>(config => { config.UseSqlite(_config.GetConnectionString("DataBase")); });
 
             services.AddIdentity<IdentityUser, IdentityRole>(config =>
                 {
@@ -55,6 +69,7 @@ namespace IdentityServer
 
             var filePath = Path.Combine(_env.ContentRootPath, "is_cert.pfx");
             var certificate = new X509Certificate2(filePath, _config["Passwords:Certificate"]);
+            AddLocalizationConfigurations(services);
 
             services.AddIdentityServer()
                 .AddAspNetIdentity<IdentityUser>()
@@ -62,19 +77,27 @@ namespace IdentityServer
                 .AddInMemoryClients(Configuration.GetClients())
                 .AddInMemoryIdentityResources(Configuration.GetIdentityResources())
                 .AddSigningCredential(certificate);
-            // .AddDeveloperSigningCredential();
 
             services.AddAuthentication()
-                .AddFacebook( config =>
+                .AddFacebook(config =>
                 {
                     config.ClientId = _config["AuthClients:Google:ClientId"];
                     config.ClientSecret = _config["AuthClients:Google:ClientSecret"];
                 });
 
+
             services.Configure<SmtpSettings>(_config.GetSection("SmtpSettings"));
             services.AddSingleton<IMailerService, MailerService>();
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
 
             services.AddControllersWithViews()
+                .AddViewLocalization()
+                .AddDataAnnotationsLocalization(options =>
+                {
+                    options.DataAnnotationLocalizerProvider = (type, factory) =>
+                        factory.Create(typeof(SharedResource));
+                })
                 .AddRazorRuntimeCompilation();
         }
 
@@ -87,11 +110,38 @@ namespace IdentityServer
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseStaticFiles();
-            
+            var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(locOptions.Value);
+
+            app.UseCors("AllowAll");
+
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                OnPrepareResponse = context =>
+                {
+                    if (context.Context.Response.Headers["feature-policy"].Count == 0)
+                    {
+                        var featurePolicy = "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'";
+
+                        context.Context.Response.Headers["feature-policy"] = featurePolicy;
+                    }
+
+                    if (context.Context.Response.Headers["X-Content-Security-Policy"].Count == 0)
+                    {
+                        var csp = "script-src 'self';style-src 'self';img-src 'self' data:;font-src 'self';form-action 'self';frame-ancestors 'self';block-all-mixed-content";
+                        // IE
+                        context.Context.Response.Headers["X-Content-Security-Policy"] = csp;
+                    }
+                }
+            });
+
             app.UseRouting();
 
             app.UseIdentityServer();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints => { endpoints.MapDefaultControllerRoute(); });
         }
@@ -107,6 +157,32 @@ namespace IdentityServer
                 var user = new IdentityUser("bob") {Email = "bob@gmail.com"};
                 userManager.CreateAsync(user, "Pass123$").GetAwaiter().GetResult();
             }
+        }
+
+        private static void AddLocalizationConfigurations(IServiceCollection services)
+        {
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+            services.Configure<RequestLocalizationOptions>(
+                options =>
+                {
+                    var supportedCultures = new List<CultureInfo>
+                    {
+                        new CultureInfo("en-US"),
+                        new CultureInfo("de-DE")
+                    };
+
+                    options.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
+                    options.SupportedCultures = supportedCultures;
+                    options.SupportedUICultures = supportedCultures;
+
+                    var providerQuery = new LocalizationQueryProvider
+                    {
+                        QueryParameterName = "ui_locales"
+                    };
+
+                    options.RequestCultureProviders.Insert(0, providerQuery);
+                });
         }
     }
 }
