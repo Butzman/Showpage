@@ -1,11 +1,11 @@
-﻿@using IdentityServer.Resources
-@model LoginViewModel
+﻿@model IdentityServer.Models.AuthViewModels.LoginViewModel
+
 
 <div class="row m-4 justify-content-center">
+    @await Html.PartialAsync("_StatusMessage", Model.StatusMessage)
     <div class="col col-md-6 m-auto">
         <h4>@SharedResource.ACCOUNT_LOGIN</h4>
-        <form class="m-4" asp-controller="Auth" asp-action="Login" method="post">
-            <input type="hidden" asp-for="ReturnUrl">
+        <form class="m-4" asp-controller="Auth" asp-action="Login" asp-route-returnurl="@Model.ReturnUrl" method="post">
             <div class="form-group">
                 <label >@SharedResource.USERNAME</label>
                 <input class="form-control" asp-for="Username">
@@ -24,15 +24,21 @@
             </div>
             <div class="form-group">
                 <button class="btn btn-success" type="submit">@SharedResource.ACCOUNT_LOGIN</button>
-                <a class="ml-5" asp-controller="Auth" asp-action="Register" asp-route-returnUrl="@Model.ReturnUrl">@SharedResource.REGISTER_AS_NEW_USER</a>
+            </div>
+            <div class="form-group col my-5">
+                <p>
+                    <a asp-controller="Auth" asp-action="Register" asp-route-returnUrl="@Model.ReturnUrl">@SharedResource.REGISTER_AS_NEW_USER</a>
+                </p>
+                <p>
+                    <a asp-action="ForgotPassword">@SharedResource.FORGOT_YOUR_PASSWORD</a>
+                </p>
             </div>
         </form>
     </div>
     <div class="col col-md-6 px-5" style="border-left: #6c757d 3px solid;">
         <h4>@SharedResource.EXTERNAL_LOGINS</h4>
         <div class="form-group">
-            <form class="m-4" asp-controller="Auth" asp-action="ExternalLogin"
-                  asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <form class="m-4" asp-controller="Auth" asp-action="ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post">
                 @foreach (var provider in Model.ExternalProviders)
                 {
                     <button class="btn btn-outline-primary" name="provider" value="@provider.Name" type="submit">

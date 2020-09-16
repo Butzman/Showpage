@@ -15,6 +15,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Options;
 
 namespace IdentityServer
@@ -154,7 +155,7 @@ namespace IdentityServer
                 var userManager = serviceScope.ServiceProvider
                     .GetRequiredService<UserManager<IdentityUser>>();
 
-                var user = new IdentityUser("bob") {Email = "bob@gmail.com"};
+                var user = new IdentityUser("bob") {Email = "andreas@butzhammer.de"};
                 userManager.CreateAsync(user, "Pass123$").GetAwaiter().GetResult();
             }
         }

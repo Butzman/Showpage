@@ -1,10 +1,14 @@
-﻿<div class="col justify-content-center m-5">
+﻿@using Microsoft.Extensions.Configuration
+
+@inject IConfiguration Config
+
+<div class="col justify-content-center m-5">
     <div class="row">
-        <h2 class="m-auto">Thank you for verifying your email!</h2>
+        <h2 class="m-auto">@SharedResource.CONFIRM_EMAIL_TEXT</h2>
     </div>
     <div class="row my-5">
         <h3 class="m-auto">
-            Click <a href="/Auth/Login">here</a> to login.
+            <a href="@((object) Config.GetValue<string>("Urls:ReactClient"))">@SharedResource.LOGOUT_RETURN_TO Homepage.</a>
         </h3>
     </div>
 </div>

@@ -61,7 +61,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zwei-Faktor-Authentifizierung.
+        ///   Looks up a localized string similar to Two-factor authentication.
         /// </summary>
         public static string _2FA {
             get {
@@ -70,7 +70,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fügen Sie eine Authentifizierungs-App hinzu.
+        ///   Looks up a localized string similar to Add authenticator app.
         /// </summary>
         public static string _2FA_AUTHENTICATION_ADD_AUTHENTICATOR_APP {
             get {
@@ -79,7 +79,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Authentifizierungs-App zurücksetzen.
+        ///   Looks up a localized string similar to Reset authenticator app.
         /// </summary>
         public static string _2FA_AUTHENTICATION_ADD_RESET_APP {
             get {
@@ -88,7 +88,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Authentifizierungs-App einrichten.
+        ///   Looks up a localized string similar to Setup authenticator app.
         /// </summary>
         public static string _2FA_AUTHENTICATION_ADD_SETUP_APP {
             get {
@@ -97,7 +97,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zwei-Faktor-Authentifizierung (2FA).
+        ///   Looks up a localized string similar to Two-factor authentication (2FA).
         /// </summary>
         public static string _2FA_AUTHENTICATION_TITLE {
             get {
@@ -106,7 +106,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie haben {0} Wiederherstellungscodes übrig..
+        ///   Looks up a localized string similar to You have {0} recovery codes left..
         /// </summary>
         public static string _2FA_N_CODES_LEFT {
             get {
@@ -115,7 +115,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie sollten eine neue Reihe von Wiederherstellungscodes generieren..
+        ///   Looks up a localized string similar to You should generate a new set of recovery codes..
         /// </summary>
         public static string _2FA_N_CODES_LEFT_TEXT {
             get {
@@ -124,7 +124,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie haben keine Wiederherstellungscodes mehr..
+        ///   Looks up a localized string similar to You have no recovery codes left..
         /// </summary>
         public static string _2FA_NO_CODES_LEFT {
             get {
@@ -133,7 +133,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie müssen einen neuen Satz von Wiederherstellungscodes generieren, bevor Sie sich mit einem Wiederherstellungscode anmelden können..
+        ///   Looks up a localized string similar to You must generate a new set of recovery codes before you can log in with a recovery code..
         /// </summary>
         public static string _2FA_NO_CODES_LEFT_TEXT {
             get {
@@ -142,7 +142,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie haben 1 Wiederherstellungscode übrig..
+        ///   Looks up a localized string similar to You have 1 recovery code left..
         /// </summary>
         public static string _2FA_ONE_CODES_LEFT {
             get {
@@ -151,7 +151,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie können einen neuen Satz von Wiederherstellungscodes generieren..
+        ///   Looks up a localized string similar to You can generate a new set of recovery codes..
         /// </summary>
         public static string _2FA_ONE_CODES_LEFT_TEXT {
             get {
@@ -160,7 +160,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der aktuelle Browser wurde vergessen. Wenn Sie sich erneut von diesem Browser aus anmelden, werden Sie aufgefordert, Ihren 2FA-Code einzugeben..
+        ///   Looks up a localized string similar to The current browser has been forgotten. When you login again from this browser you will be prompted for your 2fa code..
         /// </summary>
         public static string _2FA_STATUS_BROWSER_FORGET {
             get {
@@ -169,7 +169,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zugriff verweigert.
+        ///   Looks up a localized string similar to Access denied.
         /// </summary>
         public static string ACCESS_DENIED {
             get {
@@ -178,7 +178,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie haben keinen Zugriff auf diese Ressource..
+        ///   Looks up a localized string similar to You do not have access to this resource..
         /// </summary>
         public static string ACCESS_DENIED_TEXT {
             get {
@@ -187,7 +187,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zugriff auf Ihre Anwendungen und Ressourcen, auch wenn Sie offline sind.
+        ///   Looks up a localized string similar to Access to your applications and resources, even when you are offline.
         /// </summary>
         public static string Access_to_your_applications_and_resources__even_when_you_are_offline {
             get {
@@ -196,7 +196,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Klicken Sie auf den Login-Link.
+        ///   Looks up a localized string similar to Click the login button.
         /// </summary>
         public static string ACCOUNT_CLICK_LOGIN_LINK {
             get {
@@ -205,7 +205,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Einloggen.
+        ///   Looks up a localized string similar to Log  in.
         /// </summary>
         public static string ACCOUNT_LOGIN {
             get {
@@ -214,7 +214,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zwei-Faktor-Authentifizierung.
+        ///   Looks up a localized string similar to Two-factor authentication.
         /// </summary>
         public static string ACCOUNT_LOGIN_2FA {
             get {
@@ -223,7 +223,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Haben Sie keinen Zugriff auf Ihr Authentifizierungsgerät? Sie können.
+        ///   Looks up a localized string similar to Don&apos;t have access to your authenticator device? You can.
         /// </summary>
         public static string ACCOUNT_LOGIN_2FA_NO_AUTHENTICATOR_DEVICE {
             get {
@@ -232,7 +232,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Einloggen mit einem Wiederherstellungscode.
+        ///   Looks up a localized string similar to log in with a recovery code.
         /// </summary>
         public static string ACCOUNT_LOGIN_2FA_RECOVERY_CODE_TEXT {
             get {
@@ -241,7 +241,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gerät merken.
+        ///   Looks up a localized string similar to Remember this machine.
         /// </summary>
         public static string ACCOUNT_LOGIN_2FA_REMEMBER_MC {
             get {
@@ -250,7 +250,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ihr Login ist mit einer Authentifizierungs-App geschützt. Geben Sie unten Ihren Authentifizierungscode ein..
+        ///   Looks up a localized string similar to Your login is protected with an authenticator app. Enter your authenticator code below..
         /// </summary>
         public static string ACCOUNT_LOGIN_2FA_TEXT {
             get {
@@ -259,7 +259,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Authentifizierungscode.
+        ///   Looks up a localized string similar to Authenticator code.
         /// </summary>
         public static string ACCOUNT_LOGIN_AUTHENTICATOR_CODE {
             get {
@@ -268,7 +268,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mit Azure AD einloggen.
+        ///   Looks up a localized string similar to Login with Azure AD.
         /// </summary>
         public static string ACCOUNT_LOGIN_WITH_AZURE_AD {
             get {
@@ -277,7 +277,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Es sind keine externen Authentifizierungsdienste konfiguriert. Informationen zum Einrichten dieser ASP.NET-Anwendung für die Anmeldung über externe Dienste finden Sie in diesem Artikel unter https://go.microsoft.com/fwlink/?LinkID=532715. .
+        ///   Looks up a localized string similar to There are no external authentication services configured. See this article https://go.microsoft.com/fwlink/?LinkID=532715 for details on setting up this ASP.NET application to support logging in via external services..
         /// </summary>
         public static string ACCOUNT_NO_EXTERNAL_LOGINS {
             get {
@@ -286,7 +286,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wiederherstellungscode.
+        ///   Looks up a localized string similar to Recovery code.
         /// </summary>
         public static string ACCOUNT_RECOVERY_CODE {
             get {
@@ -295,7 +295,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wiederherstellungscode erforderlich.
+        ///   Looks up a localized string similar to Recovery code required.
         /// </summary>
         public static string ACCOUNT_RECOVERY_CODE_REQUIRED {
             get {
@@ -304,7 +304,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Überprüfung des Wiederherstellungscodes.
+        ///   Looks up a localized string similar to Recovery code verification.
         /// </summary>
         public static string ACCOUNT_RECOVERY_CODE_VERIFICATION {
             get {
@@ -313,7 +313,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie haben sich mit einem Wiederherstellungscode angemeldet. Diese Anmeldung wird nicht gespeichert, bis Sie beim Anmelden einen Authenticator-App-Code angeben oder 2FA deaktivieren und sich erneut anmelden..
+        ///   Looks up a localized string similar to You have requested to log in with a recovery code. This login will not be remembered until you provide an authenticator app code at log in or disable 2FA and log in again..
         /// </summary>
         public static string ACCOUNT_RECOVERY_CODE_VERIFICATION_TEXT {
             get {
@@ -322,7 +322,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Verwenden Sie einen anderen Dienst, um sich anzumelden..
+        ///   Looks up a localized string similar to Use another service to log in..
         /// </summary>
         public static string ACCOUNT_USE_ANOTHER_SERVICE_LOG_IN {
             get {
@@ -331,7 +331,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Verwenden Sie einen lokalen Benutzer um sich anzumelden..
+        ///   Looks up a localized string similar to Use a local account to log in..
         /// </summary>
         public static string ACCOUNT_USE_LOCAL_ACCOUNT_TO_LOG_IN {
             get {
@@ -340,7 +340,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to und.
+        ///   Looks up a localized string similar to and.
         /// </summary>
         public static string AND {
             get {
@@ -349,7 +349,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Authentifizierungs-App.
+        ///   Looks up a localized string similar to Authenticator app.
         /// </summary>
         public static string AUTHENTICATOR_APP {
             get {
@@ -358,7 +358,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwort ändern.
+        ///   Looks up a localized string similar to Change password.
         /// </summary>
         public static string CHANGE_PASSWORD {
             get {
@@ -367,7 +367,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ihr Passwort wurde geändert..
+        ///   Looks up a localized string similar to Your password has been changed..
         /// </summary>
         public static string CHANGE_PASSWORD_STATUS {
             get {
@@ -376,7 +376,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Code ist erforderlich.
+        ///   Looks up a localized string similar to Code is required.
         /// </summary>
         public static string CODE_REQUIRED {
             get {
@@ -385,7 +385,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Optimistischer Parallelitätsfehler, Objekt wurde geändert..
+        ///   Looks up a localized string similar to Optimistic concurrency failure, object has been modified..
         /// </summary>
         public static string ConcurrencyFailure {
             get {
@@ -394,7 +394,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Authentifizierungs-App konfigurieren.
+        ///   Looks up a localized string similar to Configure authenticator app.
         /// </summary>
         public static string CONFIGURE_AUTHENTICATOR_APP {
             get {
@@ -403,7 +403,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Laden Sie eine Zwei-Faktor-Authentifizierungs-App wie Microsoft Authenticator für.
+        ///   Looks up a localized string similar to Download a two-factor authenticator app like Microsoft Authenticator for.
         /// </summary>
         public static string CONFIGURE_AUTHENTICATOR_APP_DOWNLOAD_TEXT {
             get {
@@ -412,7 +412,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Google Authenticator für.
+        ///   Looks up a localized string similar to Google Authenticator for.
         /// </summary>
         public static string CONFIGURE_AUTHENTICATOR_APP_GOOGLE_TEXT {
             get {
@@ -421,7 +421,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zur Aktivierung der QR-Code-Generierung lesen Sie bitte unsere .
+        ///   Looks up a localized string similar to To enable QR code generation please read our.
         /// </summary>
         public static string CONFIGURE_AUTHENTICATOR_APP_SCAN_ALERT {
             get {
@@ -430,7 +430,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nachdem Sie den QR-Code gescannt oder den oben genannten Schlüssel eingegeben haben, erhalten Sie von der Zwei-Faktor-Authentifizierungs-App einen eindeutigen Code. Geben Sie den Code in das Bestätigungsfeld ein..
+        ///   Looks up a localized string similar to Once you have scanned the QR code or input the key above, your two factor authentication app will provide you with a unique code. Enter the code in the confirmation box below..
         /// </summary>
         public static string CONFIGURE_AUTHENTICATOR_APP_SCAN_ALERT_DETAILS {
             get {
@@ -439,7 +439,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dokumentation.
+        ///   Looks up a localized string similar to documentation.
         /// </summary>
         public static string CONFIGURE_AUTHENTICATOR_APP_SCAN_ALERT_LINK {
             get {
@@ -448,7 +448,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Scannen Sie den QR-Code oder geben Sie diesen Schlüssel .
+        ///   Looks up a localized string similar to Scan the QR Code or enter this key.
         /// </summary>
         public static string CONFIGURE_AUTHENTICATOR_APP_SCAN1 {
             get {
@@ -457,7 +457,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to in Ihre Zwei-Faktor-Authentifizierungs-App ein. Leerzeichen, Groß- und Kleinschreibung spielen keine Rolle..
+        ///   Looks up a localized string similar to into your two factor authenticator app. Spaces and casing do not matter..
         /// </summary>
         public static string CONFIGURE_AUTHENTICATOR_APP_SCAN2 {
             get {
@@ -466,7 +466,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Führen Sie die folgenden Schritte aus, um eine Authentifizierungs-App zu verwenden:.
+        ///   Looks up a localized string similar to To use an authenticator app go through the following steps:.
         /// </summary>
         public static string CONFIGURE_AUTHENTICATOR_APP_STEPS {
             get {
@@ -475,7 +475,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-Mail-Adresse verifizieren.
+        ///   Looks up a localized string similar to Confirm email.
         /// </summary>
         public static string CONFIRM_EMAIL {
             get {
@@ -484,7 +484,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vielen Dank für die Verifizierung Ihrer E-Mail-Adresse..
+        ///   Looks up a localized string similar to Thank you for confirming your email..
         /// </summary>
         public static string CONFIRM_EMAIL_TEXT {
             get {
@@ -493,7 +493,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwort bestätigen.
+        ///   Looks up a localized string similar to Confirm Password.
         /// </summary>
         public static string CONFIRM_PASSWORD {
             get {
@@ -502,7 +502,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwort und Passwortbestätigung stimmen nicht überein..
+        ///   Looks up a localized string similar to The password and confirmation password do not match..
         /// </summary>
         public static string CONFIRM_PASSWORD_NOT_MATCHING {
             get {
@@ -511,7 +511,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bestätigen Sie Ihre E-Mail-Adresse.
+        ///   Looks up a localized string similar to Confirm your email.
         /// </summary>
         public static string CONFIRM_YOUR_EMAIL {
             get {
@@ -520,7 +520,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bitte bestätigen Sie Ihr Konto, indem Sie hier &lt;a href=&apos;{0}&apos;&gt;klicken&lt;/a&gt;. .
+        ///   Looks up a localized string similar to Please confirm your account by &lt;a href=&apos;{0}&apos;&gt;clicking here&lt;/a&gt;..
         /// </summary>
         public static string CONFIRM_YOUR_EMAIL_TEXT {
             get {
@@ -529,7 +529,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Applikationszugriff.
+        ///   Looks up a localized string similar to Application Access.
         /// </summary>
         public static string CONSENT_APPLICATION_ACCESS {
             get {
@@ -538,16 +538,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bitte bestätigen Sie, dass die Autorisierungsanfrage den Code enthält:.
-        /// </summary>
-        public static string CONSENT_CONFIRM_AUTH_REQUEST_QUOTECONSENT_CONFIRM_AUTH_REQUEST_QUOTE {
-            get {
-                return ResourceManager.GetString("CONSENT_CONFIRM_AUTH_REQUEST_QUOTECONSENT_CONFIRM_AUTH_REQUEST_QUOTE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Bitte bestätigen Sie, dass die Autorisierungsanfrage den Code enthät:.
+        ///   Looks up a localized string similar to Please confirm that the authorization request quotes the code:.
         /// </summary>
         public static string CONSENT_CONFIRM_AUTH_REQUEST_QUOTES {
             get {
@@ -556,7 +547,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wählen Sie die Berechtigung ab, welche Sie nicht geben möchten..
+        ///   Looks up a localized string similar to Uncheck the permissions you do not wish to grant..
         /// </summary>
         public static string CONSENT_IS_CHECK_UNREQUIRED {
             get {
@@ -565,7 +556,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to erfordert Ihre Berechtigung.
+        ///   Looks up a localized string similar to is requesting your permission.
         /// </summary>
         public static string CONSENT_IS_REQUESTING_YOUR_PERMISSION {
             get {
@@ -574,7 +565,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nein, verweigern.
+        ///   Looks up a localized string similar to No, Do Not Allow.
         /// </summary>
         public static string CONSENT_NO_NOT_ALLOWED {
             get {
@@ -583,7 +574,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Persönliche Informationen.
+        ///   Looks up a localized string similar to Personal Information.
         /// </summary>
         public static string CONSENT_PERSONAL_INFORMATION {
             get {
@@ -592,7 +583,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Einstellungen merken.
+        ///   Looks up a localized string similar to Remember My Decision.
         /// </summary>
         public static string CONSENT_REMEMBER_MY_DECISION {
             get {
@@ -601,7 +592,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (Pflichtfeld).
+        ///   Looks up a localized string similar to (required).
         /// </summary>
         public static string CONSENT_REQUIRED {
             get {
@@ -610,7 +601,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ja, erlauben.
+        ///   Looks up a localized string similar to Yes, Allow.
         /// </summary>
         public static string CONSENT_YES_ALLOWED {
             get {
@@ -619,7 +610,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Neues Konto erstellen.
+        ///   Looks up a localized string similar to Create a new account..
         /// </summary>
         public static string CREATE_A_NEW_ACCOUNT {
             get {
@@ -628,7 +619,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Aktuelles Passwort.
+        ///   Looks up a localized string similar to Current password.
         /// </summary>
         public static string CURRENT_PASSWORD {
             get {
@@ -637,7 +628,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Aktuelles Passwort erforderlich.
+        ///   Looks up a localized string similar to Current password required.
         /// </summary>
         public static string CURRENT_PASSWORD_REQUIRED {
             get {
@@ -646,7 +637,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ein unbekannter Fehler ist aufgetreten..
+        ///   Looks up a localized string similar to An unknown failure has occurred..
         /// </summary>
         public static string DefaultError {
             get {
@@ -655,7 +646,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Löschen.
+        ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string DELETE {
             get {
@@ -664,7 +655,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Persönliche Daten löschen.
+        ///   Looks up a localized string similar to Delete Personal Data.
         /// </summary>
         public static string DELETE_PERSONAL_DATA {
             get {
@@ -673,7 +664,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Daten löschen und mein Konto schließen.
+        ///   Looks up a localized string similar to Delete data and close my account.
         /// </summary>
         public static string DELETE_PERSONAL_DATA_AND_CLOSE {
             get {
@@ -682,7 +673,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Durch das Löschen dieser Daten wird Ihr Konto dauerhaft gelöscht. Dies kann nicht wiederhergestellt werden..
+        ///   Looks up a localized string similar to Deleting this data will permanently remove your account, and this cannot be recovered..
         /// </summary>
         public static string DELETE_PERSONAL_DATA_TEXT {
             get {
@@ -691,7 +682,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bitte geben Sie den Code ein, der auf Ihrem Gerät angezeigt wird.
+        ///   Looks up a localized string similar to Please enter the code displayed on your device.
         /// </summary>
         public static string DEVICE_ENTER_CODE_DISPLAYED_ON_DEVICE {
             get {
@@ -700,7 +691,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erfolgreich.
+        ///   Looks up a localized string similar to Success.
         /// </summary>
         public static string DEVICE_SUCCESS {
             get {
@@ -709,7 +700,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie haben das Gerät erfolgreich autorisiert.
+        ///   Looks up a localized string similar to You have successfully authorized the device.
         /// </summary>
         public static string DEVICE_SUCCESS_AUTHORIZE {
             get {
@@ -718,7 +709,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Benutzer Code.
+        ///   Looks up a localized string similar to User Code.
         /// </summary>
         public static string DEVICE_USER_CODE {
             get {
@@ -727,7 +718,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zwei-Faktor-Authentifizierung (2FA) deaktivieren.
+        ///   Looks up a localized string similar to Disable two-factor authentication (2FA).
         /// </summary>
         public static string DISABLE_2FA {
             get {
@@ -736,7 +727,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 2FA deaktivieren.
+        ///   Looks up a localized string similar to Disable 2FA.
         /// </summary>
         public static string DISABLE_2FA_BUTTON {
             get {
@@ -745,7 +736,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 2FA wurde deaktiviert. Sie können 2FA aktivieren, wenn Sie eine Authenticator-App einrichten.
+        ///   Looks up a localized string similar to 2fa has been disabled. You can reenable 2fa when you setup an authenticator app.
         /// </summary>
         public static string DISABLE_2FA_STATUS {
             get {
@@ -754,7 +745,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Durch das Deaktivieren von 2FA werden die in Authenticator-Apps verwendeten Schlüssel nicht geändert. Wenn Sie den in einer Authenticator-App verwendeten Schlüssel ändern möchten, sollten Sie Ihre Authentifizierungsschlüssel.
+        ///   Looks up a localized string similar to Disabling 2FA does not change the keys used in authenticator apps. If you wish to change the key used in an authenticator app you should.
         /// </summary>
         public static string DISABLE_2FA_TEXT_DETAILS {
             get {
@@ -763,7 +754,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to zurücksetzen..
+        ///   Looks up a localized string similar to reset your authenticator keys..
         /// </summary>
         public static string DISABLE_2FA_TEXT_DETAILS_LINK {
             get {
@@ -772,7 +763,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Diese Aktion deaktiviert nur 2FA..
+        ///   Looks up a localized string similar to This action only disables 2FA..
         /// </summary>
         public static string DISABLE_2FA_TEXT_HEADER {
             get {
@@ -781,7 +772,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Herunterladen.
+        ///   Looks up a localized string similar to Download.
         /// </summary>
         public static string DOWNLOAD {
             get {
@@ -790,7 +781,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Laden Sie Ihre Daten herunter.
+        ///   Looks up a localized string similar to Download Your Data.
         /// </summary>
         public static string DOWNLOAD_YOUR_DATA {
             get {
@@ -799,7 +790,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-Mail &apos;{0}&apos; ist bereits vergeben..
+        ///   Looks up a localized string similar to Email &apos;{0}&apos; is already taken..
         /// </summary>
         public static string DuplicateEmail {
             get {
@@ -808,7 +799,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der Rollenname &apos;{0}&apos; ist bereits vergeben..
+        ///   Looks up a localized string similar to Role name &apos;{0}&apos; is already taken..
         /// </summary>
         public static string DuplicateRoleName {
             get {
@@ -817,7 +808,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der Benutzername &apos;{0}&apos; ist bereits vergeben..
+        ///   Looks up a localized string similar to User name &apos;{0}&apos; is already taken..
         /// </summary>
         public static string DuplicateUserName {
             get {
@@ -835,7 +826,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ungültige E-Mail-Adresse.
+        ///   Looks up a localized string similar to invalid Email.
         /// </summary>
         public static string EMAIL_INVALID {
             get {
@@ -844,7 +835,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-Mail-Adresse erforderlich.
+        ///   Looks up a localized string similar to Email required.
         /// </summary>
         public static string EMAIL_REQUIRED {
             get {
@@ -853,7 +844,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MFA aktivieren.
+        ///   Looks up a localized string similar to Enable MFA.
         /// </summary>
         public static string ERROR_ENABLE_MFA {
             get {
@@ -862,7 +853,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die Client-Anwendung erfordert, dass Sie MFA aktiviert haben. Aktivieren Sie dies und versuchen Sie, sich erneut anzumelden..
+        ///   Looks up a localized string similar to The client application requires you to have MFA enabled. Enable this and try to sign in again..
         /// </summary>
         public static string ERROR_ENABLE_MFA_CLIENT_APP_REQUIRES_MFA {
             get {
@@ -871,7 +862,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MFA Aktivierungsfehler.
+        ///   Looks up a localized string similar to Enable MFA Error.
         /// </summary>
         public static string ERROR_ENABLE_MFA_ERROR_TITLE {
             get {
@@ -880,7 +871,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie können MFA hier zum Einloggen aktivieren:.
+        ///   Looks up a localized string similar to You can enable MFA to login here:.
         /// </summary>
         public static string ERROR_ENABLE_MFA_YOU_CAN_ENABLE_HERE {
             get {
@@ -889,7 +880,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Verbinden Sie Ihr {0} Konto.
+        ///   Looks up a localized string similar to Associate your {0} account.
         /// </summary>
         public static string EXTERNAL_LOGIN_ASSOCIATE_ACCOUNT {
             get {
@@ -898,7 +889,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie haben sich erfolgreich mit {0} authentifiziert. Bitte geben Sie unten eine E-Mail-Adresse für diese Seite ein und klicken Sie auf die Registrierenknopf, um die Anmeldung abzuschließen..
+        ///   Looks up a localized string similar to You&apos;ve successfully authenticated with {0}. Please enter an email address for this site below and click the Register button to finish logging in..
         /// </summary>
         public static string EXTERNAL_LOGIN_TEXT {
             get {
@@ -907,7 +898,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Externe Logins.
+        ///   Looks up a localized string similar to External logins.
         /// </summary>
         public static string EXTERNAL_LOGINS {
             get {
@@ -916,7 +907,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fügen Sie einen weiteren Dienst hinzu, um sich anzumelden..
+        ///   Looks up a localized string similar to Add another service to log in..
         /// </summary>
         public static string EXTERNAL_LOGINS_ADD_ANOTHER_SERVICE_TO_LOGIN {
             get {
@@ -925,7 +916,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Registrierte Anmeldungen.
+        ///   Looks up a localized string similar to Registered Logins.
         /// </summary>
         public static string EXTERNAL_LOGINS_REGISTERED_LOGIN {
             get {
@@ -934,7 +925,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Externen Logins verwalten.
+        ///   Looks up a localized string similar to Manage your external logins.
         /// </summary>
         public static string EXTERNAL_LOGINS_TITLE {
             get {
@@ -943,7 +934,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fehler von externem Anbieter: {0}.
+        ///   Looks up a localized string similar to Error from external provider: {0}.
         /// </summary>
         public static string EXTERNAL_PROVIDER_ERROR {
             get {
@@ -952,7 +943,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fehler beim Laden der externen Anmeldeinformationen während der Bestätigung..
+        ///   Looks up a localized string similar to Error loading external login information during confirmation..
         /// </summary>
         public static string EXTERNAL_PROVIDER_ERROR_CONFIRMATION {
             get {
@@ -961,7 +952,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fehler beim Laden der externen Anmeldeinformationen..
+        ///   Looks up a localized string similar to Error loading external login information..
         /// </summary>
         public static string EXTERNAL_PROVIDER_ERROR_INFO {
             get {
@@ -970,7 +961,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fügen Sie einen FIDO2-Schlüssel hinzu.
+        ///   Looks up a localized string similar to Add a FIDO2 Key.
         /// </summary>
         public static string FIDO2_ADD_A_KEY {
             get {
@@ -979,7 +970,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Assertion konnte nicht überprüft werden.
+        ///   Looks up a localized string similar to Could not verify assertion.
         /// </summary>
         public static string FIDO2_COULD_NOT_VERIFY_ASSERTION {
             get {
@@ -988,7 +979,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Melden Sie sich mit FIDO2 MFA an.
+        ///   Looks up a localized string similar to Login with FIDO2 MFA.
         /// </summary>
         public static string FIDO2_LOGIN_WITH_MFA {
             get {
@@ -997,7 +988,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FIDO2 Multi-Faktor-Authentifizierung.
+        ///   Looks up a localized string similar to FIDO2 Multi-factor authentication.
         /// </summary>
         public static string FIDO2_MULTI_FACTOR_AUTHENTICATION {
             get {
@@ -1006,7 +997,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Anmeldeinformationen im Browser konnten nicht erstellt werden. Wahrscheinlich, weil der Benutzername bereits bei Ihrem Authentifikator registriert ist. Bitte ändern Sie den Benutzernamen oder den Authentifikator..
+        ///   Looks up a localized string similar to Could not create credentials in browser. Probably because the username is already registered with your authenticator. Please change username or authenticator..
         /// </summary>
         public static string FIDO2_REGISTRATION_ERROR {
             get {
@@ -1015,7 +1006,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unterstützte Browser.
+        ///   Looks up a localized string similar to Supported browsers.
         /// </summary>
         public static string FIDO2_SUPPORTED_BROWSERS {
             get {
@@ -1024,7 +1015,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tippen Sie auf Ihren Sicherheitsschlüssel, um die Registrierung abzuschließen..
+        ///   Looks up a localized string similar to Tap your security key to finish registration..
         /// </summary>
         public static string FIDO2_TAP_YOUR_SECURITY_KEY_TO_FINISH_REGISTRATION {
             get {
@@ -1033,7 +1024,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tippen Sie auf Ihren Sicherheitsschlüssel, um sich anzumelden..
+        ///   Looks up a localized string similar to Tap your security key to login. .
         /// </summary>
         public static string FIDO2_TAP_YOUR_SECURITY_KEY_TO_LOGIN {
             get {
@@ -1042,7 +1033,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zwei-Faktor-authentifizierter Benutzer kann nicht geladen werden..
+        ///   Looks up a localized string similar to Unable to load two-factor authenticated user..
         /// </summary>
         public static string FIDO2_UNABLE_TO_LOAD_2FA_AUTHENTICATED_USER {
             get {
@@ -1051,7 +1042,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unbekannte Anmeldeinformationen.
+        ///   Looks up a localized string similar to Unknown credentials.
         /// </summary>
         public static string FIDO2_UNKNOWN_CREDENTIALS {
             get {
@@ -1060,7 +1051,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Benutzer mit der ID &apos;{0}&apos; kann nicht geladen werden..
+        ///   Looks up a localized string similar to Unable to load user with ID &apos;{0}&apos;..
         /// </summary>
         public static string FIDO2_USER_NOTFOUND {
             get {
@@ -1069,7 +1060,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Benutzername.
+        ///   Looks up a localized string similar to Username.
         /// </summary>
         public static string FIDO2_USERNAME {
             get {
@@ -1078,7 +1069,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Benutzername wurde nicht registriert.
+        ///   Looks up a localized string similar to Username was not registered.
         /// </summary>
         public static string FIDO2_USERNAME_NOT_REGISTERED {
             get {
@@ -1087,7 +1078,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bitte beachten Sie: Ihr Browser scheint WebAuthn noch nicht zu unterstützen..
+        ///   Looks up a localized string similar to Please note: Your browser does not seem to support WebAuthn yet..
         /// </summary>
         public static string FIDO2_WEBAUTHN_NOT_SUPPORTED {
             get {
@@ -1096,7 +1087,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Browser vergessen.
+        ///   Looks up a localized string similar to Forget this browser.
         /// </summary>
         public static string FORGET_THIS_BROWSER {
             get {
@@ -1105,7 +1096,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwort-Bestätigung vergessen.
+        ///   Looks up a localized string similar to Forgot password confirmation.
         /// </summary>
         public static string FORGOT_PASSWORD_CONFIRMATION {
             get {
@@ -1114,7 +1105,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bitte überprüfen Sie Ihre E-Mail-Adresse, um Ihr Passwort zurückzusetzen..
+        ///   Looks up a localized string similar to Please check your email to reset your password..
         /// </summary>
         public static string FORGOT_PASSWORD_CONFIRMATION_TEXT {
             get {
@@ -1123,7 +1114,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwort vergessen?.
+        ///   Looks up a localized string similar to Forgot your password?.
         /// </summary>
         public static string FORGOT_YOUR_PASSWORD {
             get {
@@ -1132,7 +1123,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Geben Sie Ihre E-Mail-Adresse ein..
+        ///   Looks up a localized string similar to Enter your email..
         /// </summary>
         public static string FORGOT_YOUR_PASSWORD_ENTER_EMAIL {
             get {
@@ -1141,7 +1132,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Generieren.
+        ///   Looks up a localized string similar to Generate.
         /// </summary>
         public static string GENERATE {
             get {
@@ -1150,7 +1141,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wiederherstellungscodes für 2-Faktor-Authentifizierung (2FA) generieren.
+        ///   Looks up a localized string similar to Generate two-factor authentication (2FA) recovery codes.
         /// </summary>
         public static string GENERATE_2FA_RECOVERY_CODES {
             get {
@@ -1159,7 +1150,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wenn Sie Ihr Gerät verlieren und keine Wiederherstellungscodes haben, verlieren Sie den Zugriff auf Ihr Konto..
+        ///   Looks up a localized string similar to If you lose your device and don&apos;t have the recovery codes you will lose access to your account..
         /// </summary>
         public static string GENERATE_2FA_RECOVERY_CODES_INFO_LOSE {
             get {
@@ -1168,7 +1159,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Legen Sie diese Codes an einem sicheren Ort ab..
+        ///   Looks up a localized string similar to Put these codes in a safe place..
         /// </summary>
         public static string GENERATE_2FA_RECOVERY_CODES_SAFE_PLACE {
             get {
@@ -1177,7 +1168,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Durch die Erstellung neuer Wiederherstellungscodes werden die in Authenticator-Apps verwendeten Schlüssel nicht geändert. Wenn Sie den in einer Authenticator-App verwendeten Schlüssel ändern möchten, sollten Sie Ihre Authentifizierungsschlüssel zurücksetzen..
+        ///   Looks up a localized string similar to Generating new recovery codes does not change the keys used in authenticator apps. If you wish to change the key used in an authenticator app you should.
         /// </summary>
         public static string GENERATE_2FA_RECOVERY_CODES_TEXT {
             get {
@@ -1186,7 +1177,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to zurücksetzen..
+        ///   Looks up a localized string similar to reset your authenticator keys..
         /// </summary>
         public static string GENERATE_2FA_RECOVERY_CODES_TEXT_LINK {
             get {
@@ -1195,7 +1186,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Generiere Wiederherstellungscodes.
+        ///   Looks up a localized string similar to Generate Recovery Codes.
         /// </summary>
         public static string GENERATE_RECOVERY_CODES {
             get {
@@ -1204,7 +1195,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Genehmigung.
+        ///   Looks up a localized string similar to Grants.
         /// </summary>
         public static string GRANTS {
             get {
@@ -1213,7 +1204,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to API Genehmigung.
+        ///   Looks up a localized string similar to API Grants.
         /// </summary>
         public static string GRANTS_API_GRANTS {
             get {
@@ -1222,7 +1213,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Client-Anwendungszugriff.
+        ///   Looks up a localized string similar to Client Application Access.
         /// </summary>
         public static string GRANTS_CLIENT_APP_ACCESS {
             get {
@@ -1231,7 +1222,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erstellt.
+        ///   Looks up a localized string similar to Created.
         /// </summary>
         public static string GRANTS_CREATED {
             get {
@@ -1240,7 +1231,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Verfällt.
+        ///   Looks up a localized string similar to Expires.
         /// </summary>
         public static string GRANTS_EXPIRES {
             get {
@@ -1249,7 +1240,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Identität Genehmigung.
+        ///   Looks up a localized string similar to Identity Grants.
         /// </summary>
         public static string GRANTS_IDENTITY_GRANTS {
             get {
@@ -1258,7 +1249,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unten finden Sie eine Liste der Anwendungen, auf die Sie Zugriff haben, und die Namen der Ressourcen, auf die Sie Zugriff haben..
+        ///   Looks up a localized string similar to Below is the list of applications you have given access to and the names of the resources they have access to..
         /// </summary>
         public static string GRANTS_INFO {
             get {
@@ -1267,7 +1258,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie haben keinen Zugriff auf Anwendungen gewährt.
+        ///   Looks up a localized string similar to You have not given access to any applications.
         /// </summary>
         public static string GRANTS_NO_ACCESS {
             get {
@@ -1276,7 +1267,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zugangsberechtigung aufheben.
+        ///   Looks up a localized string similar to Revoke Access.
         /// </summary>
         public static string GRANTS_REVOKE_ACCESS {
             get {
@@ -1285,7 +1276,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Das eingegebene Passwort ist nicht korrekt.
+        ///   Looks up a localized string similar to Password is not correct.
         /// </summary>
         public static string INCORRECT_PASSWORD {
             get {
@@ -1294,7 +1285,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ungültiger Authentifizierungscode.
+        ///   Looks up a localized string similar to Invalid authenticator code..
         /// </summary>
         public static string INVALID_AUTHENTICATOR_CODE {
             get {
@@ -1303,7 +1294,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ungültiger Code..
+        ///   Looks up a localized string similar to Invalid code..
         /// </summary>
         public static string INVALID_CODE {
             get {
@@ -1312,7 +1303,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie müssen mindestens eine Berechtigung auswählen..
+        ///   Looks up a localized string similar to You must pick at least one permission..
         /// </summary>
         public static string INVALID_CONSENT_PERMISSION {
             get {
@@ -1321,7 +1312,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ungültige Auswahl.
+        ///   Looks up a localized string similar to Invalid Selection.
         /// </summary>
         public static string INVALID_CONSENT_SELECTION {
             get {
@@ -1330,7 +1321,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ungültiger Anmeldeversuch..
+        ///   Looks up a localized string similar to Invalid login attempt..
         /// </summary>
         public static string INVALID_LOGIN_ATTEMPT {
             get {
@@ -1339,7 +1330,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ungültiger Wiederherstellungscode eingegeben.
+        ///   Looks up a localized string similar to Invalid recovery code entered..
         /// </summary>
         public static string INVALID_RECOVERY_CODE {
             get {
@@ -1348,7 +1339,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ungültige Auswahl.
+        ///   Looks up a localized string similar to Invalid selection.
         /// </summary>
         public static string Invalid_selection {
             get {
@@ -1357,7 +1348,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der Bestätigungscode ist ungültig..
+        ///   Looks up a localized string similar to Verification code is invalid..
         /// </summary>
         public static string INVALID_VERFICATION_CODE {
             get {
@@ -1366,7 +1357,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ungültige E-Mail Adresse &apos;{0}&apos;.
+        ///   Looks up a localized string similar to Email &apos;{0}&apos; is invalid..
         /// </summary>
         public static string InvalidEmail {
             get {
@@ -1375,7 +1366,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der Typ {0} muss von {1} &lt;{2}&gt; abgeleitet sein..
+        ///   Looks up a localized string similar to Type {0} must derive from {1}&lt;{2}&gt;..
         /// </summary>
         public static string InvalidManagerType {
             get {
@@ -1384,7 +1375,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der angegebene PasswordHasherCompatibilityMode ist ungültig..
+        ///   Looks up a localized string similar to The provided PasswordHasherCompatibilityMode is invalid..
         /// </summary>
         public static string InvalidPasswordHasherCompatibilityMode {
             get {
@@ -1393,7 +1384,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der Iterationszähler muss eine positive Zahl sein..
+        ///   Looks up a localized string similar to The iteration count must be a positive integer..
         /// </summary>
         public static string InvalidPasswordHasherIterationCount {
             get {
@@ -1402,7 +1393,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der Rollenname &apos;{0}&apos; ist ungültig..
+        ///   Looks up a localized string similar to Role name &apos;{0}&apos; is invalid..
         /// </summary>
         public static string InvalidRoleName {
             get {
@@ -1411,7 +1402,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ungültiges Token.
+        ///   Looks up a localized string similar to Invalid token..
         /// </summary>
         public static string InvalidToken {
             get {
@@ -1420,7 +1411,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der Benutzername &apos;{0}&apos; ist ungültig und darf nur Buchstaben oder Ziffern enthalten..
+        ///   Looks up a localized string similar to User name &apos;{0}&apos; is invalid, can only contain letters or digits..
         /// </summary>
         public static string InvalidUserName {
             get {
@@ -1429,7 +1420,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sprache.
+        ///   Looks up a localized string similar to Language.
         /// </summary>
         public static string LANGUAGE {
             get {
@@ -1438,7 +1429,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gesperrt.
+        ///   Looks up a localized string similar to Locked out.
         /// </summary>
         public static string LOCKED_OUT {
             get {
@@ -1447,7 +1438,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dieses Konto wurde gesperrt. Bitte versuchen Sie es später erneut..
+        ///   Looks up a localized string similar to This account has been locked out, please try again later..
         /// </summary>
         public static string LOCKED_OUT_TEXT {
             get {
@@ -1456,7 +1447,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ein Benutzer mit diesem Login ist bereits vorhanden..
+        ///   Looks up a localized string similar to A user with this login already exists..
         /// </summary>
         public static string LoginAlreadyAssociated {
             get {
@@ -1465,7 +1456,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ausloggen.
+        ///   Looks up a localized string similar to Logout.
         /// </summary>
         public static string LOGOUT {
             get {
@@ -1474,7 +1465,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zurück zu.
+        ///   Looks up a localized string similar to Return to.
         /// </summary>
         public static string LOGOUT_RETURN_TO {
             get {
@@ -1483,7 +1474,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie haben sich erfolgreich von der Anwendung abgemeldet..
+        ///   Looks up a localized string similar to You have successfully logged out of the application..
         /// </summary>
         public static string LOGOUT_TEXT {
             get {
@@ -1492,7 +1483,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ändern Sie Ihre Benutzereinstellungen.
+        ///   Looks up a localized string similar to Change your account settings.
         /// </summary>
         public static string MANAGE_CHANGE_ACCOUNT_SETTINGS {
             get {
@@ -1501,7 +1492,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Benutzereinstellungen ändern.
+        ///   Looks up a localized string similar to Manage your account.
         /// </summary>
         public static string MANAGE_YOUR_ACCOUNT {
             get {
@@ -1510,7 +1501,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AddIdentity muss für die Service Collection aufgerufen werden..
+        ///   Looks up a localized string similar to AddIdentity must be called on the service collection..
         /// </summary>
         public static string MustCallAddIdentity {
             get {
@@ -1519,7 +1510,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Neues Passwort.
+        ///   Looks up a localized string similar to New password.
         /// </summary>
         public static string NEW_PASSWORD {
             get {
@@ -1528,7 +1519,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Neues Passwort erforderlich.
+        ///   Looks up a localized string similar to New password required.
         /// </summary>
         public static string NEW_PASSWORD_REQUIRED {
             get {
@@ -1537,7 +1528,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Es wurde kein IPersonalDataProtector Dienst registriert. Dies ist erforderlich, wenn ProtectPersonalData = true ist..
+        ///   Looks up a localized string similar to No IPersonalDataProtector service was registered, this is required when ProtectPersonalData = true..
         /// </summary>
         public static string NoPersonalDataProtector {
             get {
@@ -1546,7 +1537,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Es wurde kein Rollentyp angegeben. Versuchen Sie es mit AddRoles &lt;TRole&gt; ()..
+        ///   Looks up a localized string similar to No RoleType was specified, try AddRoles&lt;TRole&gt;()..
         /// </summary>
         public static string NoRoleType {
             get {
@@ -1555,7 +1546,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Es ist kein IUserTwoFactorTokenProvider &lt;{0}&gt; mit dem Namen &apos;{1}&apos; registriert..
+        ///   Looks up a localized string similar to No IUserTwoFactorTokenProvider&lt;{0}&gt; named &apos;{1}&apos; is registered..
         /// </summary>
         public static string NoTokenProvider {
             get {
@@ -1564,7 +1555,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der Sicherheitsstempel des Benutzers darf nicht null sein..
+        ///   Looks up a localized string similar to User security stamp cannot be null..
         /// </summary>
         public static string NullSecurityStamp {
             get {
@@ -1573,7 +1564,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Offline-Zugriff.
+        ///   Looks up a localized string similar to Offline Access.
         /// </summary>
         public static string Offline_Access {
             get {
@@ -1582,7 +1573,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to oder.
+        ///   Looks up a localized string similar to or.
         /// </summary>
         public static string OR {
             get {
@@ -1591,7 +1582,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwort.
+        ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string PASSWORD {
             get {
@@ -1600,7 +1591,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwort erforderlich.
+        ///   Looks up a localized string similar to Password required.
         /// </summary>
         public static string PASSWORD_REQUIRED {
             get {
@@ -1609,7 +1600,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Falsches Passwort.
+        ///   Looks up a localized string similar to Incorrect password..
         /// </summary>
         public static string PasswordMismatch {
             get {
@@ -1618,7 +1609,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwörter müssen mindestens eine Ziffer haben (&apos;0&apos; - &apos;9&apos;)..
+        ///   Looks up a localized string similar to Passwords must have at least one digit (&apos;0&apos;-&apos;9&apos;)..
         /// </summary>
         public static string PasswordRequiresDigit {
             get {
@@ -1627,7 +1618,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwörter müssen mindestens einen Kleinbuchstaben haben (&apos;a&apos; - &apos;z&apos;)..
+        ///   Looks up a localized string similar to Passwords must have at least one lowercase (&apos;a&apos;-&apos;z&apos;)..
         /// </summary>
         public static string PasswordRequiresLower {
             get {
@@ -1636,7 +1627,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwörter müssen mindestens ein nicht alphanumerisches Zeichen enthalten..
+        ///   Looks up a localized string similar to Passwords must have at least one non alphanumeric character..
         /// </summary>
         public static string PasswordRequiresNonAlphanumeric {
             get {
@@ -1645,7 +1636,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwörter müssen mindestens {0} unterschiedliche Zeichen enthalten..
+        ///   Looks up a localized string similar to Passwords must use at least {0} different characters..
         /// </summary>
         public static string PasswordRequiresUniqueChars {
             get {
@@ -1654,7 +1645,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwörter müssen mindestens einen Großbuchstaben enthalten (&apos;A&apos; - &apos;Z&apos;)..
+        ///   Looks up a localized string similar to Passwords must have at least one uppercase (&apos;A&apos;-&apos;Z&apos;)..
         /// </summary>
         public static string PasswordRequiresUpper {
             get {
@@ -1663,7 +1654,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwörter müssen mindestens {0} Zeichen enthalten..
+        ///   Looks up a localized string similar to Passwords must be at least {0} characters..
         /// </summary>
         public static string PasswordTooShort {
             get {
@@ -1672,7 +1663,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Persönliche Daten.
+        ///   Looks up a localized string similar to Personal data.
         /// </summary>
         public static string PERSONAL_DATA {
             get {
@@ -1681,7 +1672,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Durch das Löschen dieser Daten wird Ihr Konto dauerhaft gelöscht. Dies kann nicht wiederhergestellt werden..
+        ///   Looks up a localized string similar to Deleting this data will permanently remove your account, and this cannot be recovered..
         /// </summary>
         public static string PERSONAL_DATA_DELETEINFO {
             get {
@@ -1690,7 +1681,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ihr Konto enthält persönliche Daten, die Sie uns gegeben haben. Auf dieser Seite können Sie diese Daten herunterladen oder löschen..
+        ///   Looks up a localized string similar to Your account contains personal data that you have given us. This page allows you to download or delete that data..
         /// </summary>
         public static string PERSONAL_DATA_INFO {
             get {
@@ -1699,7 +1690,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Telefonnummer.
+        ///   Looks up a localized string similar to Phone number.
         /// </summary>
         public static string PHONE_NUMBER {
             get {
@@ -1708,7 +1699,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Profil.
+        ///   Looks up a localized string similar to Profile.
         /// </summary>
         public static string PROFILE {
             get {
@@ -1717,7 +1708,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wiederherstellungscodes.
+        ///   Looks up a localized string similar to Recovery codes.
         /// </summary>
         public static string Recovery_codes {
             get {
@@ -1726,7 +1717,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fehler beim Einlösen des Wiederherstellungscodes..
+        ///   Looks up a localized string similar to Recovery code redemption failed..
         /// </summary>
         public static string RecoveryCodeRedemptionFailed {
             get {
@@ -1735,7 +1726,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Registrieren.
+        ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string REGISTER {
             get {
@@ -1744,7 +1735,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Als neuer Benutzer/-in registrieren.
+        ///   Looks up a localized string similar to Register as a new user.
         /// </summary>
         public static string REGISTER_AS_NEW_USER {
             get {
@@ -1753,7 +1744,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Browser merken.
+        ///   Looks up a localized string similar to Remember Browser.
         /// </summary>
         public static string REMEMBER_BROWSER {
             get {
@@ -1762,7 +1753,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login merken.
+        ///   Looks up a localized string similar to Remember me.
         /// </summary>
         public static string REMEMBER_ME {
             get {
@@ -1771,7 +1762,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Löschen.
+        ///   Looks up a localized string similar to Remove.
         /// </summary>
         public static string REMOVE {
             get {
@@ -1780,7 +1771,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zurücksetzen.
+        ///   Looks up a localized string similar to Reset.
         /// </summary>
         public static string RESET {
             get {
@@ -1789,7 +1780,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wenn Sie Ihren Authentifikatorschlüssel zurücksetzen, funktioniert Ihre Authentifizierungsanwendung erst, wenn Sie sie neu konfigurieren..
+        ///   Looks up a localized string similar to If you reset your authenticator key your authenticator app will not work until you reconfigure it..
         /// </summary>
         public static string RESET_AUTHENTICATOR_INFO {
             get {
@@ -1798,7 +1789,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Authentifizierungsschlüssel zurücksetzen.
+        ///   Looks up a localized string similar to Reset authenticator key.
         /// </summary>
         public static string RESET_AUTHENTICATOR_KEY {
             get {
@@ -1807,7 +1798,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ihr Authentifikator-App-Schlüssel wurde zurückgesetzt. Sie müssen Ihre Authentifikator-App mit dem neuen Schlüssel konfigurieren..
+        ///   Looks up a localized string similar to Your authenticator app key has been reset, you will need to configure your authenticator app using the new key..
         /// </summary>
         public static string RESET_AUTHENTICATOR_STATUS {
             get {
@@ -1816,7 +1807,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dieser Prozess deaktiviert 2FA, bis Sie Ihre Authentifikator-App überprüft haben. Wenn Sie Ihre Authentifikator-App-Konfiguration nicht abschließen, verlieren Sie möglicherweise den Zugriff auf Ihr Konto..
+        ///   Looks up a localized string similar to This process disables 2FA until you verify your authenticator app. If you do not complete your authenticator app configuration you may lose access to your account..
         /// </summary>
         public static string RESET_AUTHENTICATOR_TEXT {
             get {
@@ -1825,7 +1816,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwort zurücksetzen.
+        ///   Looks up a localized string similar to Reset Password.
         /// </summary>
         public static string RESET_PASSWORD {
             get {
@@ -1834,7 +1825,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Klicken Sie hier, um sich einzuloggen.
+        ///   Looks up a localized string similar to Click here to log in.
         /// </summary>
         public static string RESET_PASSWORD_CLICK_HERE_TO_LOGIN {
             get {
@@ -1843,7 +1834,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bestätigung fürs Passwort zurücksetzen.
+        ///   Looks up a localized string similar to Reset password confirmation.
         /// </summary>
         public static string RESET_PASSWORD_CONFIRMATION {
             get {
@@ -1852,7 +1843,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Klicken Sie hier, um sich einzuloggen.
+        ///   Looks up a localized string similar to click here to log in.
         /// </summary>
         public static string RESET_PASSWORD_CONFIRMATION_CLICK_HERE {
             get {
@@ -1861,7 +1852,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ihr Passwort wurde zurückgesetzt. Bitte.
+        ///   Looks up a localized string similar to Your password has been reset. Please.
         /// </summary>
         public static string RESET_PASSWORD_CONFIRMATION_TEXT1 {
             get {
@@ -1870,7 +1861,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bitte setzen Sie Ihr Passwort zurück, indem Sie hier &lt;a href=&apos;{0}&apos;&gt;klicken&lt;/a&gt;..
+        ///   Looks up a localized string similar to Please reset your password by &lt;a href=&apos;{0}&apos;&gt;clicking here&lt;/a&gt;..
         /// </summary>
         public static string RESET_PASSWORD_EMAIL_TEXT {
             get {
@@ -1879,7 +1870,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ihr Passwort wurde zurückgesetzt..
+        ///   Looks up a localized string similar to Your password has been reset..
         /// </summary>
         public static string RESET_PASSWORD_YOUR_PASSWORD_HAS_BEEN_RESET {
             get {
@@ -1888,7 +1879,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wiederherstellungscodes zurücksetzen.
+        ///   Looks up a localized string similar to Reset recovery codes.
         /// </summary>
         public static string RESET_RECOVERY_CODES {
             get {
@@ -1897,7 +1888,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Setzen Sie Ihr Passwort zurück.
+        ///   Looks up a localized string similar to Reset your password.
         /// </summary>
         public static string RESET_YOUR_PASSWORD {
             get {
@@ -1906,7 +1897,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die Rolle {0} ist nicht vorhanden..
+        ///   Looks up a localized string similar to Role {0} does not exist..
         /// </summary>
         public static string RoleNotFound {
             get {
@@ -1915,7 +1906,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speichern.
+        ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string SAVE {
             get {
@@ -1924,7 +1915,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Verifizierungscode senden.
+        ///   Looks up a localized string similar to Send Verification Code.
         /// </summary>
         public static string SEND_VERIFICATION_CODE {
             get {
@@ -1933,7 +1924,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wählen Sie den Zwei-Faktor-Authentifizierungsanbieter aus:.
+        ///   Looks up a localized string similar to Select Two-Factor Authentication Provider:.
         /// </summary>
         public static string SEND_VERIFICATION_CODE_SELECT {
             get {
@@ -1942,7 +1933,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Verifizierung-E-Mail senden.
+        ///   Looks up a localized string similar to Send verification email.
         /// </summary>
         public static string SEND_VERIFICATION_EMAIL {
             get {
@@ -1951,7 +1942,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwort festlegen.
+        ///   Looks up a localized string similar to Set password.
         /// </summary>
         public static string SET_PASSWORD {
             get {
@@ -1960,7 +1951,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ihr Passwort wurde festgelegt.
+        ///   Looks up a localized string similar to Your password has been set..
         /// </summary>
         public static string SET_PASSWORD_STATUS {
             get {
@@ -1969,7 +1960,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie haben keinen lokalen Benutzernamen / Passwort für diese Seite. Fügen Sie ein lokales Konto hinzu, damit Sie sich ohne externe Anmeldung anmelden können..
+        ///   Looks up a localized string similar to You do not have a local username/password for this site. Add a local account so you can log in without an external login..
         /// </summary>
         public static string SET_PASSWORD_TEXT {
             get {
@@ -1978,7 +1969,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwort festlegen.
+        ///   Looks up a localized string similar to Set your password.
         /// </summary>
         public static string SET_YOUR_PASSWORD {
             get {
@@ -1987,7 +1978,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die externe Anmeldung wurde hinzugefügt.
+        ///   Looks up a localized string similar to The external login was added..
         /// </summary>
         public static string STATUS_EXTERNAL_LOGIN_ADDED {
             get {
@@ -1996,7 +1987,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die externe Anmeldung wurde entfernt.
+        ///   Looks up a localized string similar to The external login was removed..
         /// </summary>
         public static string STATUS_EXTERNAL_LOGIN_REMOVED {
             get {
@@ -2005,7 +1996,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie haben neue Wiederherstellungscodes generiert.
+        ///   Looks up a localized string similar to You have generated new recovery codes..
         /// </summary>
         public static string STATUS_GENERATE_CODES {
             get {
@@ -2014,7 +2005,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ihr Profil wurde aktualisiert.
+        ///   Looks up a localized string similar to Your profile has been updated.
         /// </summary>
         public static string STATUS_MESSAGE_PROFILE_HAS_BEEN_RESET {
             get {
@@ -2023,7 +2014,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ihr Profil wurde aktualisiert.
+        ///   Looks up a localized string similar to Your profile has been updated.
         /// </summary>
         public static string STATUS_PROFILE_UPDATED {
             get {
@@ -2032,7 +2023,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Verifizierungs-E-Mail gesendet Bitte überprüfen Sie Ihre E-Mails..
+        ///   Looks up a localized string similar to Verification email sent. Please check your email..
         /// </summary>
         public static string STATUS_UPDATE_PROFILE_EMAIL_SEND {
             get {
@@ -2050,7 +2041,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IQueryableRoleStore&lt;TUser&gt; ist nicht implementiert..
+        ///   Looks up a localized string similar to Store does not implement IQueryableRoleStore&lt;TRole&gt;..
         /// </summary>
         public static string StoreNotIQueryableRoleStore {
             get {
@@ -2059,7 +2050,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IQueryableUserStore&lt;TUser&gt; ist nicht implementiert..
+        ///   Looks up a localized string similar to Store does not implement IQueryableUserStore&lt;TUser&gt;..
         /// </summary>
         public static string StoreNotIQueryableUserStore {
             get {
@@ -2068,7 +2059,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IRoleClaimStore&lt;TUser&gt; ist nicht implementiert..
+        ///   Looks up a localized string similar to Store does not implement IRoleClaimStore&lt;TRole&gt;..
         /// </summary>
         public static string StoreNotIRoleClaimStore {
             get {
@@ -2077,7 +2068,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IUserAuthenticationTokenStore&lt;TUser&gt; ist nicht implementiert..
+        ///   Looks up a localized string similar to Store does not implement IUserAuthenticationTokenStore&lt;User&gt;..
         /// </summary>
         public static string StoreNotIUserAuthenticationTokenStore {
             get {
@@ -2086,7 +2077,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IUserAuthenticatorKeyStore&lt;TUser&gt; ist nicht implementiert..
+        ///   Looks up a localized string similar to Store does not implement IUserAuthenticatorKeyStore&lt;User&gt;..
         /// </summary>
         public static string StoreNotIUserAuthenticatorKeyStore {
             get {
@@ -2095,7 +2086,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IUserClaimStore&lt;TUser&gt; ist nicht implementiert..
+        ///   Looks up a localized string similar to Store does not implement IUserClaimStore&lt;TUser&gt;..
         /// </summary>
         public static string StoreNotIUserClaimStore {
             get {
@@ -2104,7 +2095,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IUserConfirmationStore&lt;TUser&gt; ist nicht implementiert..
+        ///   Looks up a localized string similar to Store does not implement IUserConfirmationStore&lt;TUser&gt;..
         /// </summary>
         public static string StoreNotIUserConfirmationStore {
             get {
@@ -2113,7 +2104,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IUserEmailStore&lt;TUser&gt; ist nicht implementiert..
+        ///   Looks up a localized string similar to Store does not implement IUserEmailStore&lt;TUser&gt;..
         /// </summary>
         public static string StoreNotIUserEmailStore {
             get {
@@ -2122,7 +2113,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IUserLockoutStore&lt;TUser&gt; ist nicht implementiert..
+        ///   Looks up a localized string similar to Store does not implement IUserLockoutStore&lt;TUser&gt;..
         /// </summary>
         public static string StoreNotIUserLockoutStore {
             get {
@@ -2131,7 +2122,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  IUserLoginStore&lt;TUser&gt; ist nicht implementiert..
+        ///   Looks up a localized string similar to Store does not implement IUserLoginStore&lt;TUser&gt;..
         /// </summary>
         public static string StoreNotIUserLoginStore {
             get {
@@ -2140,7 +2131,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  IUserPhoneNumberStore&lt;TUser&gt; ist nicht implementiert..
+        ///   Looks up a localized string similar to Store does not implement IUserPasswordStore&lt;TUser&gt;..
         /// </summary>
         public static string StoreNotIUserPasswordStore {
             get {
@@ -2149,7 +2140,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IProtectedUserStore &lt;TUser&gt; ist nicht implementiert..
+        ///   Looks up a localized string similar to Store does not implement IUserPhoneNumberStore&lt;TUser&gt;..
         /// </summary>
         public static string StoreNotIUserPhoneNumberStore {
             get {
@@ -2158,7 +2149,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  IUserRoleStore&lt;TUser&gt; ist nicht implementiert..
+        ///   Looks up a localized string similar to Store does not implement IUserRoleStore&lt;TUser&gt;..
         /// </summary>
         public static string StoreNotIUserRoleStore {
             get {
@@ -2167,7 +2158,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IUserTwoFactorRecoveryCodeStore&lt;User&gt; ist nicht implementiert..
+        ///   Looks up a localized string similar to Store does not implement IUserSecurityStampStore&lt;TUser&gt;..
         /// </summary>
         public static string StoreNotIUserSecurityStampStore {
             get {
@@ -2176,7 +2167,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IProtectedUserStore &lt;TUser&gt; ist nicht implementiert..
+        ///   Looks up a localized string similar to Store does not implement IUserTwoFactorRecoveryCodeStore&lt;User&gt;..
         /// </summary>
         public static string StoreNotIUserTwoFactorRecoveryCodeStore {
             get {
@@ -2185,7 +2176,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IUserTwoFactorStore&lt;TUser&gt;ist nicht implementiert..
+        ///   Looks up a localized string similar to Store does not implement IUserTwoFactorStore&lt;TUser&gt;..
         /// </summary>
         public static string StoreNotIUserTwoFactorStore {
             get {
@@ -2194,7 +2185,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bestätigen.
+        ///   Looks up a localized string similar to Submit.
         /// </summary>
         public static string SUBMIT {
             get {
@@ -2203,7 +2194,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Das {0} muss mindestens {2} und darf höchstens {1} Zeichen lang sein..
+        ///   Looks up a localized string similar to The {0} must be at least {2} and at max {1} characters long..
         /// </summary>
         public static string The__0__must_be_at_least__2__and_at_max__1__characters_long_ {
             get {
@@ -2212,7 +2203,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zwei-Faktor-Authentifizierungs-Code ist erforderlich.
+        ///   Looks up a localized string similar to Two-factor code is required.
         /// </summary>
         public static string TWOFACTORCODE_REQUIRED {
             get {
@@ -2221,7 +2212,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nicht erfolgreiche Anmeldung mit Authentifizierungsanbieter..
+        ///   Looks up a localized string similar to Unsuccessful login with service..
         /// </summary>
         public static string UNSUCCESSFUL_LOGIN_WITH_SERVICE {
             get {
@@ -2230,7 +2221,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwort aktualisieren.
+        ///   Looks up a localized string similar to Update password.
         /// </summary>
         public static string UPDATE_PASSWORD {
             get {
@@ -2239,7 +2230,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Benutzer mit ID  &apos;{0}&apos; konnte nicht geladen werden..
+        ///   Looks up a localized string similar to Unable to load user with ID &apos;{0}&apos;..
         /// </summary>
         public static string USER_NOTFOUND {
             get {
@@ -2248,7 +2239,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Benutzerprofil.
+        ///   Looks up a localized string similar to User profile.
         /// </summary>
         public static string User_profile {
             get {
@@ -2257,7 +2248,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der Benutzer hat bereits ein Passwort festgelegt..
+        ///   Looks up a localized string similar to User already has a password set..
         /// </summary>
         public static string UserAlreadyHasPassword {
             get {
@@ -2266,7 +2257,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der Benutzer ist bereits in der Rolle &apos;{0}&apos;..
+        ///   Looks up a localized string similar to User already in role &apos;{0}&apos;..
         /// </summary>
         public static string UserAlreadyInRole {
             get {
@@ -2275,7 +2266,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der Benutzer ist gesperrt..
+        ///   Looks up a localized string similar to User is locked out..
         /// </summary>
         public static string UserLockedOut {
             get {
@@ -2284,7 +2275,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die Sperrung ist für diesen Benutzer nicht aktiviert..
+        ///   Looks up a localized string similar to Lockout is not enabled for this user..
         /// </summary>
         public static string UserLockoutNotEnabled {
             get {
@@ -2293,7 +2284,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Benutzername.
+        ///   Looks up a localized string similar to Username.
         /// </summary>
         public static string USERNAME {
             get {
@@ -2302,7 +2293,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der Benutzer {0} ist nicht vorhanden..
+        ///   Looks up a localized string similar to User {0} does not exist..
         /// </summary>
         public static string UserNameNotFound {
             get {
@@ -2311,7 +2302,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der Benutzer hat die Rolle &apos;{0}&apos; nicht..
+        ///   Looks up a localized string similar to User is not in role &apos;{0}&apos;..
         /// </summary>
         public static string UserNotInRole {
             get {
@@ -2320,7 +2311,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Verifizierungscode.
+        ///   Looks up a localized string similar to Verification code.
         /// </summary>
         public static string VERIFICATION_CODE {
             get {
@@ -2329,7 +2320,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bestätigungscode wird benötigt.
+        ///   Looks up a localized string similar to Verification code is required.
         /// </summary>
         public static string VERIFICATION_CODE_REQUIRED {
             get {
@@ -2338,7 +2329,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Überprüfen.
+        ///   Looks up a localized string similar to Verify.
         /// </summary>
         public static string VERIFY {
             get {
@@ -2347,7 +2338,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Möchten Sie sich von IdentityServer abmelden?.
+        ///   Looks up a localized string similar to Would you like to logout of IdentityServer?.
         /// </summary>
         public static string WOULD_YOU_LIKE_TO_LOGOUT {
             get {
@@ -2356,7 +2347,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ja.
+        ///   Looks up a localized string similar to Yes.
         /// </summary>
         public static string YES {
             get {
@@ -2365,7 +2356,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie müssen mindestens eine Erlaubnis auswählen.
+        ///   Looks up a localized string similar to You must pick at least one permission.
         /// </summary>
         public static string You_must_pick_at_least_one_permission {
             get {
@@ -2374,7 +2365,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ihre Emailadresse.
+        ///   Looks up a localized string similar to Your email address.
         /// </summary>
         public static string Your_email_address {
             get {
@@ -2383,7 +2374,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ihre Benutzerkennung.
+        ///   Looks up a localized string similar to Your user identifier.
         /// </summary>
         public static string Your_user_identifier {
             get {
@@ -2392,7 +2383,7 @@ namespace IdentityServer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ihre Benutzerprofilinformationen (Vorname, Nachname usw.).
+        ///   Looks up a localized string similar to Your user profile information (first name, last name, etc.).
         /// </summary>
         public static string Your_user_profile_information__first_name__last_name__etc__ {
             get {

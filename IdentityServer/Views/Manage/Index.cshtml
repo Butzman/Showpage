@@ -1,5 +1,4 @@
-﻿@using IdentityServer.Resources
-@using IdentityServer.Views.Manage
+﻿@using IdentityServer.Views.Helper
 @model IndexViewModel
 @{
     ViewData["Title"] = @SharedResource.PROFILE;
@@ -11,7 +10,8 @@
 <div class="row">
     <div class="col-md-6">
         <form method="post">
-            <div asp-validation-summary="All" class="text-danger"></div>
+            <input asp-for="Username" class="form-control" type="hidden"/>
+            <input asp-for="IsEmailConfirmed" class="form-control" type="hidden"/>
             <div class="form-group">
                 <label asp-for="Username">@SharedResource.USERNAME</label>
                 <input asp-for="Username" class="form-control" disabled/>
@@ -30,8 +30,14 @@
                 else
                 {
                     <input asp-for="Email" class="form-control"/>
-@*                     <button asp-action="SendVerificationEmail" class="btn btn-link">@SharedResource.SEND_VERIFICATION_EMAIL</button> *@
-                    <button  class="btn btn-link">@SharedResource.SEND_VERIFICATION_EMAIL</button>
+                    <button
+                        asp-action="SendEmailVerification"
+                        asp-controller="Auth"
+                        asp-route-Username="@Model.Username"
+                        asp-route-Email="@Model.Email"
+                        class="btn btn-link">
+                        @SharedResource.SEND_VERIFICATION_EMAIL
+                    </button>
                 }
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
@@ -44,7 +50,3 @@
         </form>
     </div>
 </div>
-
-@section Scripts {
-    @await Html.PartialAsync("_ValidationScriptsPartial")
-}

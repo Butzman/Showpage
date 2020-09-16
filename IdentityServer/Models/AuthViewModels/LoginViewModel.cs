@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Authentication;
 
-namespace IdentityServer.Models
+namespace IdentityServer.Models.AuthViewModels
 {
     public class LoginViewModel
     {
@@ -13,6 +13,7 @@ namespace IdentityServer.Models
         
         public bool RememberLogin { get; set; }
         public string ReturnUrl { get; set; }
+        public string StatusMessage { get; set; }
 
         public IEnumerable<AuthenticationScheme> ExternalProviders { get; set; }
     }

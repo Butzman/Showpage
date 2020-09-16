@@ -1,5 +1,5 @@
-﻿@using IdentityServer.Resources
-@model RegisterViewModel
+﻿@model IdentityServer.Models.AuthViewModels.RegisterViewModel
+
 
 <div class="col my-5 justify-content-center">
     <div class="m-auto" style="max-width: 500px">
@@ -27,8 +27,8 @@
                 <span asp-validation-for="ConfirmPassword"></span>
             </div>
             <div class="form-group">
-                <button class="btn btn-outline-success" type="submit">@SharedResource.REGISTER</button>
-                <a class="ml-5" asp-controller="Auth" asp-action="Login" asp-route-returnUrl="@Model.ReturnUrl">...or go back to Login</a>
+                <button class="btn btn-success" type="submit">@SharedResource.REGISTER</button>
+                <a class="ml-5" asp-controller="Auth" asp-action="Login" asp-route-returnUrl="@Model.ReturnUrl">@SharedResource.ACCOUNT_LOGIN</a>
             </div>
         </form>
     </div>
