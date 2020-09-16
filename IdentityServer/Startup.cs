@@ -40,6 +40,7 @@ namespace IdentityServer
                         p.AllowCredentials()
                             .WithOrigins(
                                 "http://localhost:3000",
+                                "https://localhost:3001",
                                 "https://localhost:5001")
                             .SetIsOriginAllowedToAllowWildcardSubdomains()
                             .AllowAnyHeader()

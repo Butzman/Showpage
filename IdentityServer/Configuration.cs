@@ -42,6 +42,28 @@ namespace IdentityServer
 
                     AllowAccessTokensViaBrowser = true,
                     RequireConsent = false,
+                }, 
+                new Client
+                {
+                    ClientId = "blazor_client",
+
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    RequireClientSecret = false,
+
+                    RedirectUris = {"https://localhost:3001/callback"},
+                    PostLogoutRedirectUris = {"https://localhost:3001/signed-out"},
+                    AllowedCorsOrigins = {"https://localhost:3001"},
+
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Email,
+                        "Api_CodersShop",
+                    },
+
+                    AllowAccessTokensViaBrowser = true,
+                    RequireConsent = false,
                 },
             };
     }
