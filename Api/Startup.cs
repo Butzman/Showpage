@@ -1,4 +1,6 @@
 using System;
+using AutoMapper;
+using AutoMapper.EquivalencyExpression;
 using Dal;
 using Dal.Interfaces.Dal;
 using Microsoft.AspNetCore.Builder;
@@ -7,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using IConfigurationProvider = Microsoft.Extensions.Configuration.IConfigurationProvider;
 
 namespace Api
 {
@@ -18,7 +21,7 @@ namespace Api
         {
             _configuration = configuration;
         }
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAuthentication("Bearer")
@@ -42,10 +45,13 @@ namespace Api
                             .AllowAnyMethod()
                 )
             );
-            
+
             services.AddSingleton<IContextFactory>(new ContextFactory(_configuration["Paths:DataBase"]));
-            
-            services.AddControllers(); }
+
+            services.AddControllers();
+
+            ConfigureAutomapper(services);
+        }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -63,9 +69,22 @@ namespace Api
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
-            
-            
-            DataBaseMigration.EnsureMigrated(app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope().ServiceProvider,_configuration["Paths:DataBase"]).Wait() ;
+
+
+            DataBaseMigration.EnsureMigrated(app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope().ServiceProvider, _configuration["Paths:DataBase"]).Wait();
+        }
+
+
+        public static void ConfigureAutomapper(IServiceCollection services)
+        {
+            var configurationProvider = new MapperConfiguration(x =>
+            {
+                x.AddProfile<AutomapperProfile>();
+                x.AddProfile<Dal.AutomapperProfile>();
+                x.AddCollectionMappers();
+            });
+            var mapper = new Mapper(configurationProvider);
+            services.AddSingleton<IMapper>(mapper);
         }
     }
 }
