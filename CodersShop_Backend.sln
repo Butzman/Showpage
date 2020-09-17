@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{6AD2F4FA-A56D-45FB-B280-6A6E4C242AEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dal", "Dal\Dal.csproj", "{4FEA2919-CE3F-497E-9E6E-ECA3D35089D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{FC70D54F-1F90-4D1B-B87E-C0B1A0943890}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{6AD2F4FA-A56D-45FB-B280-6A6E4C242AEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AD2F4FA-A56D-45FB-B280-6A6E4C242AEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AD2F4FA-A56D-45FB-B280-6A6E4C242AEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FEA2919-CE3F-497E-9E6E-ECA3D35089D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FEA2919-CE3F-497E-9E6E-ECA3D35089D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FEA2919-CE3F-497E-9E6E-ECA3D35089D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FEA2919-CE3F-497E-9E6E-ECA3D35089D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC70D54F-1F90-4D1B-B87E-C0B1A0943890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC70D54F-1F90-4D1B-B87E-C0B1A0943890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC70D54F-1F90-4D1B-B87E-C0B1A0943890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC70D54F-1F90-4D1B-B87E-C0B1A0943890}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
