@@ -1,10 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Dal;
+using Dal.Interfaces.Dal;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
@@ -13,6 +12,13 @@ namespace Api
 {
     public class Startup
     {
+        private readonly IConfiguration _configuration;
+
+        public Startup(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+        
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAuthentication("Bearer")
@@ -36,7 +42,9 @@ namespace Api
                             .AllowAnyMethod()
                 )
             );
-
+            
+            services.AddSingleton<IContextFactory>(new ContextFactory(_configuration["Paths:Db"]));
+            
             services.AddControllers();
         }
 

@@ -6,10 +6,19 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.7" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.7">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Dal\Dal.csproj" />
       <ProjectReference Include="..\Shared\Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Dtos\Base" />
     </ItemGroup>
 
 </Project>

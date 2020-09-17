@@ -2,8 +2,8 @@
 
 namespace Dal.Entities.Base
 {
-    public class EntityBase<TId>: IHaveAnId<TId>
+    public class EntityBase<TId> : IHaveAnId<TId>
     {
-        public TId Id { get; }
+        public TId Id { get; set; }
     }
 }
