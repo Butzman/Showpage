@@ -47,11 +47,12 @@ namespace IdentityServer
                 {
                     ClientId = "blazor_client",
 
-                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowedGrantTypes = GrantTypes.Code,
                     RequireClientSecret = false,
-
-                    RedirectUris = {"https://localhost:3001/callback"},
-                    PostLogoutRedirectUris = {"https://localhost:3001/signed-out"},
+                    RequirePkce = true,
+                    
+                    RedirectUris = {"https://localhost:3001/authentication/login-callback"},
+                    PostLogoutRedirectUris = {"https://localhost:3001/"},
                     AllowedCorsOrigins = {"https://localhost:3001"},
 
                     AllowedScopes =
