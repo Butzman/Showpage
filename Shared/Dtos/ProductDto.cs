@@ -1,4 +1,4 @@
-﻿using Shared.Dtos.Base;
+﻿using Api.Dtos.Base;
 
 namespace Shared.Dtos
 {

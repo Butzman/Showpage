@@ -1,4 +1,5 @@
-﻿using Dal.Entities;
+﻿using System.Linq;
+using Dal.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dal
@@ -8,15 +9,18 @@ namespace Dal
         private readonly string _dbConnectionString;
 
 
-        public DalContext(): this("C:\\Users\\butzh\\AppData\\Local\\CodersShop\\database_api.sqlite") 
+        public DalContext():this("C:\\Users\\butzh\\AppData\\Local\\CodersShop\\database_api.sqlite")
         {
+            
         }
         public DalContext(string dbConnectionString)
         {
             _dbConnectionString = dbConnectionString;
         }
 
-        public DalContext(DbContextOptions<DalContext> dbContextOptions) : base(dbContextOptions){}
+        public DalContext(DbContextOptions<DalContext> dbContextOptions) : base(dbContextOptions)
+        {
+        }
 
 
         public DbSet<ProductEntity> Products { get; set; }
@@ -25,7 +29,8 @@ namespace Dal
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             ProductEntity.ConfigureEntity(modelBuilder);
-
+            AddSeedingData(modelBuilder);
+            
             base.OnModelCreating(modelBuilder);
         }
 
@@ -34,8 +39,14 @@ namespace Dal
         {
             optionsBuilder.EnableSensitiveDataLogging()
                 .UseSqlite($"Data Source={_dbConnectionString}");
-        
+
             base.OnConfiguring(optionsBuilder);
+        }
+
+        protected virtual void AddSeedingData(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ProductEntity>()
+                .HasData(SeedingData.Products.ToArray());
         }
     }
 }

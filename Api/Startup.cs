@@ -43,10 +43,9 @@ namespace Api
                 )
             );
             
-            services.AddSingleton<IContextFactory>(new ContextFactory(_configuration["Paths:Db"]));
+            services.AddSingleton<IContextFactory>(new ContextFactory(_configuration["Paths:DataBase"]));
             
-            services.AddControllers();
-        }
+            services.AddControllers(); }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -64,6 +63,9 @@ namespace Api
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            
+            
+            DataBaseMigration.EnsureMigrated(app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope().ServiceProvider,_configuration["Paths:DataBase"]).Wait() ;
         }
     }
 }

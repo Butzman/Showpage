@@ -7,6 +7,10 @@ namespace Dal
     {
         private readonly string _dbConnectionString;
 
+        public ContextFactory()
+        {
+        }
+
         public ContextFactory(string dbConnectionString)
         {
             _dbConnectionString = dbConnectionString;

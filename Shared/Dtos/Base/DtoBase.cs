@@ -1,6 +1,6 @@
 ﻿using Shared.Interfaces;
 
-namespace Shared.Dtos.Base
+namespace Api.Dtos.Base
 {
     public class DtoBase<TId>: IHaveAnId<TId>
     {
