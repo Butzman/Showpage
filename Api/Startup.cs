@@ -1,4 +1,5 @@
 using System;
+using Api.Communication.Hubs;
 using AutoMapper;
 using AutoMapper.EquivalencyExpression;
 using Dal;
@@ -38,7 +39,7 @@ namespace Api
 
             services.AddCors(config =>
                 config.AddPolicy(
-                    "AllowAll",
+                    "CorsPolicy",
                     p =>
                         p.AllowAnyOrigin()
                             .AllowAnyHeader()
@@ -60,7 +61,7 @@ namespace Api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors("AllowAll");
+            app.UseCors("CorsPolicy");
 
             app.UseRouting();
 
@@ -68,7 +69,12 @@ namespace Api
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.UseWebSockets();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+                endpoints.MapHub<ProductHub>("ProductHub");
+            });
 
 
             DataBaseMigration.EnsureMigrated(app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope().ServiceProvider, _configuration["Paths:DataBase"]).Wait();

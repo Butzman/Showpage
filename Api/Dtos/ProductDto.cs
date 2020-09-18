@@ -1,6 +1,6 @@
 ﻿using Api.Dtos.Base;
 
-namespace Shared.Dtos
+namespace Api.Dtos
 {
     public class ProductDto: DtoBase<string>
     {

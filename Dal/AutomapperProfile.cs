@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Dal.Entities;
-using Shared.Dtos;
+using Shared.Models;
 
 namespace Dal
 {
@@ -8,8 +8,8 @@ namespace Dal
     {
         public AutomapperProfile()
         {
-            CreateMap<ProductEntity, ProductDto>();
-            CreateMap<ProductDto, ProductEntity>();
+            CreateMap<ProductEntity, ProductModel>();
+            CreateMap<ProductModel, ProductEntity>();
         }
     }
 }
