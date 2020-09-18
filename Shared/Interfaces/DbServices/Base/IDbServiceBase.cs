@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Dal.Interfaces.Dal
+namespace Shared.Interfaces.DbServices.Base
 {
     public interface IDbServiceBase<TModel, TSaveModel, TId>
     {

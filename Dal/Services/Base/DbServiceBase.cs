@@ -10,6 +10,7 @@ using Dal.Interfaces.Dal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Shared.Interfaces;
+using Shared.Interfaces.DbServices.Base;
 
 namespace Dal.Services.Base
 {

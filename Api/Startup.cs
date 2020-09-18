@@ -4,6 +4,7 @@ using AutoMapper;
 using AutoMapper.EquivalencyExpression;
 using Dal;
 using Dal.Interfaces.Dal;
+using Dal.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Shared.Interfaces.DataServices;
+using Shared.Interfaces.DbServices;
 using Shared.Services.DataServices;
 using IConfigurationProvider = Microsoft.Extensions.Configuration.IConfigurationProvider;
 
@@ -27,6 +29,7 @@ namespace Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSignalR();
             services.AddAuthentication("Bearer")
                 .AddJwtBearer("Bearer", config =>
                 {
@@ -48,7 +51,7 @@ namespace Api
                             .AllowAnyMethod()
                 )
             );
-            
+
             services.AddControllers();
 
             RegisterIoc(services);
@@ -85,11 +88,11 @@ namespace Api
         private void RegisterIoc(IServiceCollection services)
         {
             services.AddSingleton<IContextFactory>(new ContextFactory(_configuration["Paths:DataBase"]));
-            services.AddSingleton<ProductHub>();
 
             services.AddSingleton<IProductDataService, ProductDataService>();
+            services.AddSingleton<IProductDbService, ProductDbService>();
         }
-        
+
         public static void ConfigureAutomapper(IServiceCollection services)
         {
             var configurationProvider = new MapperConfiguration(x =>
