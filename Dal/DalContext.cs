@@ -29,6 +29,8 @@ namespace Dal
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             ProductEntity.ConfigureEntity(modelBuilder);
+            CartEntity.ConfigureEntity(modelBuilder);
+            
             AddSeedingData(modelBuilder);
             
             base.OnModelCreating(modelBuilder);

@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Shared.Interfaces.DataServices;
+using Shared.Services.DataServices;
 using IConfigurationProvider = Microsoft.Extensions.Configuration.IConfigurationProvider;
 
 namespace Api
@@ -46,11 +48,10 @@ namespace Api
                             .AllowAnyMethod()
                 )
             );
-
-            services.AddSingleton<IContextFactory>(new ContextFactory(_configuration["Paths:DataBase"]));
-
+            
             services.AddControllers();
 
+            RegisterIoc(services);
             ConfigureAutomapper(services);
         }
 
@@ -73,7 +74,7 @@ namespace Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapHub<ProductHub>("ProductHub");
+                endpoints.MapHub<ProductHub>("/hubs/ProductHub");
             });
 
 
@@ -81,6 +82,14 @@ namespace Api
         }
 
 
+        private void RegisterIoc(IServiceCollection services)
+        {
+            services.AddSingleton<IContextFactory>(new ContextFactory(_configuration["Paths:DataBase"]));
+            services.AddSingleton<ProductHub>();
+
+            services.AddSingleton<IProductDataService, ProductDataService>();
+        }
+        
         public static void ConfigureAutomapper(IServiceCollection services)
         {
             var configurationProvider = new MapperConfiguration(x =>

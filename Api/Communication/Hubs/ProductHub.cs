@@ -1,7 +1,6 @@
 ﻿using Api.Dtos;
 using Api.Services;
 using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
 using Shared.Interfaces.DataServices;
 using Shared.Models;
 
