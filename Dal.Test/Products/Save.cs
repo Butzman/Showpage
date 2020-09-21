@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Backend_Shared.Interfaces.DataServices;
+using Backend_Shared.Models;
 using Dal.Services;
 using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using NUnit.Framework;
-using Shared.Models;
 using Shouldly;
 
 namespace Dal.Test.Products

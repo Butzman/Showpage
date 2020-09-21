@@ -1,6 +1,6 @@
 ﻿using Shared.Interfaces;
 
-namespace Shared.Models.Base
+namespace Backend_Shared.Models.Base
 {
     public class ModelBase<TId>:IHaveAnId<TId>
     {

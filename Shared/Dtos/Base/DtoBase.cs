@@ -4,6 +4,6 @@ namespace Shared.Dtos.Base
 {
     public class DtoBase<TId>: IHaveAnId<TId>
     {
-        public TId Id { get; }
+        public TId Id { get; set; }
     }
 }

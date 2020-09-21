@@ -1,26 +1,18 @@
-﻿using System.Threading.Tasks;
-using Api.Services;
+﻿using Api.Services;
 using AutoMapper;
 using Backend_Shared.Interfaces.DataServices;
+using Backend_Shared.Interfaces.DbServices;
+using Backend_Shared.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.SignalR;
 using Shared.Dtos;
-using Shared.Models;
 
 namespace Api.Communication.Hubs
 {
-    [Authorize]
-    public class ProductHub: DataServiceHubBase<ProductDto,ProductModel, string>
+    public class ProductHub : DataServiceHubBase<ProductDto, ProductModel, ProductModel, string>
 
     {
-        public ProductHub(IProductDataService productDataService, IMapper mapper) : base(productDataService, mapper)
+        public ProductHub(IProductDbService dbService, IProductDataService productDataService, IMapper mapper) : base(dbService, productDataService, mapper)
         {
-        }
-
-        public override Task OnConnectedAsync()
-        {
-            Caller.SendAsync("all" + nameof(ProductDto).Replace("Dto", ""), "Hello from the other side");
-            return base.OnConnectedAsync();
         }
     }
 }

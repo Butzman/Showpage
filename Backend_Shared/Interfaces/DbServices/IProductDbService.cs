@@ -1,5 +1,5 @@
 ﻿using Backend_Shared.Interfaces.DbServices.Base;
-using Shared.Models;
+using Backend_Shared.Models;
 
 namespace Backend_Shared.Interfaces.DbServices
 {

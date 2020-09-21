@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using Backend_Shared.Models;
 using Dal.Entities;
-using Shared.Models;
 
 namespace Dal
 {

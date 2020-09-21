@@ -11,5 +11,9 @@ namespace Api.Services
 
         protected virtual async Task SendChanges(IReadOnlyList<TDto> addedOrUpdated, IReadOnlyList<TId> deletedIds, IClientProxy listener)
             => await listener.SendAsync("changes" + typeof(TDto).Name.Replace("Dto", ""), addedOrUpdated, deletedIds, typeof(TDto).Name.Replace("Dto", ""));
+        
+        protected virtual async Task SendAll(IReadOnlyList<TDto> allModels, IClientProxy listener)
+            => await listener.SendAsync("all" + typeof(TDto).Name.Replace("Dto", ""), allModels);
+        
     }
 }

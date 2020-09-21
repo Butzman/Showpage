@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using Backend_Shared.Models;
 using Shared.Dtos;
-using Shared.Models;
 
 namespace Api
 {

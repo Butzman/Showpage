@@ -1,4 +1,4 @@
-﻿using Shared.Models;
+﻿using Backend_Shared.Models;
 
 namespace Backend_Shared.Interfaces.DataServices
 {

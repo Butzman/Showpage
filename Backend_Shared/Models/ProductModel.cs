@@ -1,6 +1,6 @@
-﻿using Shared.Models.Base;
+﻿using Backend_Shared.Models.Base;
 
-namespace Shared.Models
+namespace Backend_Shared.Models
 {
     public class ProductModel: ModelBase<string>
     {
