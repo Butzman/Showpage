@@ -1,17 +1,15 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Reactive.Threading.Tasks;
 using System.Threading.Tasks;
+using Backend_Shared.Services.DataServices.Base;
+using BackendShared.Test.DataServiceBaseTests.Helpers;
 using DynamicData;
 using NUnit.Framework;
-using Shared.Extensions;
-using Shared.Services.DataServices.Base;
-using Shared.Test.DataServiceBaseTests.Helpers;
 using Shouldly;
 
-namespace Shared.Test.DataServiceBaseTests
+namespace BackendShared.Test.DataServiceBaseTests
 {
     public class HandleAddOrUpdateTests
     {

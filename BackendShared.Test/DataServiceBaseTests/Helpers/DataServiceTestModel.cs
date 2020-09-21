@@ -1,6 +1,6 @@
 ﻿using Shared.Interfaces;
 
-namespace Shared.Test.DataServiceBaseTests.Helpers
+namespace BackendShared.Test.DataServiceBaseTests.Helpers
 {
     public class DataServiceTestModel : IHaveAnId<string>
     {

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
+using Backend_Shared.Interfaces.DataServices;
 using DynamicData;
 using DynamicData.Kernel;
 using Shared.Extensions;
 using Shared.Interfaces;
-using Shared.Interfaces.DataServices;
 
-namespace Shared.Services.DataServices.Base
+namespace Backend_Shared.Services.DataServices.Base
 {
     public class DataServiceBase<TModel, TId> : DisposableBase, IDataServiceBase<TModel, TId>
         where TModel : IHaveAnId<TId>

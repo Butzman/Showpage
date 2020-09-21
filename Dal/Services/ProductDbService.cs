@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
+using Backend_Shared.Interfaces.DataServices;
+using Backend_Shared.Interfaces.DbServices;
 using Dal.Entities;
 using Dal.Interfaces.Dal;
 using Dal.Services.Base;
 using Microsoft.Extensions.Logging;
-using Shared.Interfaces.DataServices;
-using Shared.Interfaces.DbServices;
 using Shared.Models;
 
 namespace Dal.Services

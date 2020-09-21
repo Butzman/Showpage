@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using Backend_Shared.Interfaces.DataServices;
 using Microsoft.AspNetCore.SignalR;
 using Shared.Interfaces;
-using Shared.Interfaces.DataServices;
 
 namespace Api.Services
 {
@@ -14,18 +14,18 @@ namespace Api.Services
     {
         private readonly IMapper _mapper;
 
-        public DataServiceHubBase(IDataServiceBase<TModel, TId> dataBaseDataService,
+        public DataServiceHubBase(IDataServiceBase<TModel, TId> productDataService,
             IMapper mapper)
         {
             _mapper = mapper;
 
-            dataBaseDataService.ObservableOfAddOrUpdates
-                .Subscribe(async x => await SendAddedOrUpdatedByIds(x));
-            dataBaseDataService.ObservableOfRemoves
+            productDataService.ObservableOfAddOrUpdates
+                .Subscribe(async x => await SendAddedOrUpdated(x));
+            productDataService.ObservableOfRemoves
                 .Subscribe(async x => await SendDeletedByIds(x));
         }
 
-        protected virtual async Task SendAddedOrUpdatedByIds(IEnumerable<TModel> models)
+        protected virtual async Task SendAddedOrUpdated(IEnumerable<TModel> models)
         {
             if (Clients == null) return;
 

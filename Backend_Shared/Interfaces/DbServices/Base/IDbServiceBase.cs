@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Shared.Interfaces.DbServices.Base
+namespace Backend_Shared.Interfaces.DbServices.Base
 {
     public interface IDbServiceBase<TModel, TSaveModel, TId>
     {

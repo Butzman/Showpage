@@ -2,6 +2,9 @@ using System;
 using Api.Communication.Hubs;
 using AutoMapper;
 using AutoMapper.EquivalencyExpression;
+using Backend_Shared.Interfaces.DataServices;
+using Backend_Shared.Interfaces.DbServices;
+using Backend_Shared.Services.DataServices;
 using Dal;
 using Dal.Interfaces.Dal;
 using Dal.Services;
@@ -11,9 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
-using Shared.Interfaces.DataServices;
-using Shared.Interfaces.DbServices;
-using Shared.Services.DataServices;
+using Shared.Helpers;
 using IConfigurationProvider = Microsoft.Extensions.Configuration.IConfigurationProvider;
 
 namespace Api
@@ -38,7 +39,7 @@ namespace Api
                     config.RequireHttpsMetadata = false;
                     config.TokenValidationParameters = new TokenValidationParameters
                     {
-                        ValidateAudience = false
+                        ValidateAudience = false,
                     };
                 });
 
@@ -77,7 +78,7 @@ namespace Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapHub<ProductHub>("/hubs/ProductHub");
+                endpoints.MapHub<ProductHub>("/"+SignalrUrls.ProductsHub);
             });
 
 

@@ -1,5 +1,5 @@
-﻿using Api.Dtos;
-using AutoMapper;
+﻿using AutoMapper;
+using Shared.Dtos;
 using Shared.Models;
 
 namespace Api

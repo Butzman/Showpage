@@ -8,4 +8,9 @@
       <PackageReference Include="DynamicData" Version="6.16.9" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Interfaces\DataServices" />
+      <Folder Include="Interfaces\DbServices\Base" />
+    </ItemGroup>
+
 </Project>

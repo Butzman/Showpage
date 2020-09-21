@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
+using Backend_Shared.Interfaces.DataServices;
+using Backend_Shared.Interfaces.DbServices.Base;
 using Dal.Interfaces.Dal;
 using Microsoft.Extensions.Logging;
 using Shared.Interfaces;
-using Shared.Interfaces.DataServices;
-using Shared.Interfaces.DbServices.Base;
 
 namespace Dal.Services.Base
 {

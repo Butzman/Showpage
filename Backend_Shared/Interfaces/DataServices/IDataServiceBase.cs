@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using DynamicData;
+using Shared.Interfaces;
 
-namespace Shared.Interfaces.DataServices
+namespace Backend_Shared.Interfaces.DataServices
 {
     public interface IDataServiceBase<TModel, TId>
         where TModel : IHaveAnId<TId>

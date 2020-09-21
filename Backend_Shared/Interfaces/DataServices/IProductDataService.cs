@@ -1,6 +1,6 @@
 ﻿using Shared.Models;
 
-namespace Shared.Interfaces.DataServices
+namespace Backend_Shared.Interfaces.DataServices
 {
     public interface IProductDataService: IDataServiceBase<ProductModel,string>
     {

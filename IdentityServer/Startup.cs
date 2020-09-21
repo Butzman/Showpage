@@ -156,7 +156,7 @@ namespace IdentityServer
                 var userManager = serviceScope.ServiceProvider
                     .GetRequiredService<UserManager<IdentityUser>>();
 
-                var user = new IdentityUser("bob") {Email = "andreas@butzhammer.de"};
+                var user = new IdentityUser("bob") {Email = "andreas@butzhammer.de", EmailConfirmed = true};
                 userManager.CreateAsync(user, "Pass123$").GetAwaiter().GetResult();
             }
         }
