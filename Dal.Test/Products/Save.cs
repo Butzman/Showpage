@@ -2,7 +2,9 @@
 using System.Threading.Tasks;
 using Dal.Services;
 using Microsoft.Extensions.Logging.Abstractions;
+using Moq;
 using NUnit.Framework;
+using Shared.Interfaces.DataServices;
 using Shared.Models;
 using Shared.Services.DataServices;
 using Shouldly;
@@ -12,11 +14,9 @@ namespace Dal.Test.Products
     [TestFixture]
     public class Save : DbServiceTestBase
     {
-        private ProductDataService GetDataService()
-            => new ProductDataService();
-
+        private Mock<IProductDataService> _dataServiceMock = new Mock<IProductDataService>();
         private ProductDbService GetDbService()
-            => new ProductDbService(GetDataService(), ContextFactory, NullLogger<ProductDbService>.Instance, GetMapper());
+            => new ProductDbService(_dataServiceMock.Object, ContextFactory, NullLogger<ProductDbService>.Instance, GetMapper());
 
         [Test]
         public async Task Create_NewEntryShouldBeSavedCorrectly()
@@ -40,13 +40,32 @@ namespace Dal.Test.Products
             
             //Assert
             result.Id.ShouldBe(id);
-            result.Id.ShouldNotBe(null);
             result.Name.ShouldBe(name);
-            result.Name.ShouldNotBe(null);
             result.EAN.ShouldBe(ean);
-            result.EAN.ShouldNotBe(null);
+            _dataServiceMock.Verify(x=>x.HandleAddOrUpdate(It.Is<ProductModel>(x=>x==result)));
         }
 
+        // [Test]
+        // public async Task CreatedEntry_GetPublished_OverDataService()
+        // {
+        //     //Arrange
+        //     var dbService = GetDbService();
+        //
+        //     var id = Guid.NewGuid().ToString();
+        //     const string name = "First Product";
+        //     var ean = RandomDigits(9);
+        //     
+        //     var product = new ProductModel
+        //     {
+        //         Id = id,
+        //         Name = name,
+        //         EAN = ean
+        //     };
+        //     
+        //     //Act
+        //     
+        // }
+        
         private static string RandomDigits(int length)
         {
             var random = new Random();

@@ -26,7 +26,7 @@ namespace Shared.Services.DataServices.Base
         protected readonly Subject<IList<TModel>> SubjectOfAddOrUpdates;
         protected readonly Subject<IList<TModel>> SubjectOfRemoves;
 
-        protected DataServiceBase()
+        public DataServiceBase()
         {
             SubjectOfChangeSet = new Subject<ChangeSet<TModel, TId>>().DisposeWith(this);
             SubjectOfAddOrUpdates = new Subject<IList<TModel>>().DisposeWith(this);
