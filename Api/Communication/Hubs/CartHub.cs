@@ -3,11 +3,10 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Api.Services;
 using AutoMapper;
-using Backend_Shared.Interfaces.DataServices.Base;
+using Backend_Shared.Interfaces.DataServices;
 using Backend_Shared.Interfaces.DbServices;
 using Backend_Shared.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Shared.Dtos;
 
 namespace Api.Communication.Hubs
@@ -17,7 +16,7 @@ namespace Api.Communication.Hubs
     {
         private readonly ICartDbService _dbService;
 
-        public CartHub(ICartDbService dbService, IDataServiceBase<CartModel, string> productDataService, IMapper mapper) : base(dbService, productDataService, mapper)
+        public CartHub(ICartDbService dbService, ICartDataService cartDataService, IMapper mapper) : base(dbService, cartDataService, mapper)
         {
             _dbService = dbService;
         }
@@ -25,18 +24,19 @@ namespace Api.Communication.Hubs
         public override async Task OnConnectedAsync()
         {
             var claims = Context.User.Claims;
-            var userId = claims.FirstOrDefault(x=>x.Type == ClaimTypes.NameIdentifier)?.Value;
+            var userId = claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
+
             if (Clients == null) return;
 
             var allModels = await _dbService.GetAll();
 
             if (allModels.Count == 0) return;
 
-            var allDtos = await GetDto(allModels.ToList());
+            var filteredDtos = await GetDto(allModels.Where(x => x.UserId.Equals(userId)).ToList());
 
             var listener = Clients.Caller;
-            await SendAll(allDtos.ToList(), listener);
-            await base.OnConnectedAsync();
+            await SendAll(filteredDtos.ToList(), listener);
+            
         }
     }
 }

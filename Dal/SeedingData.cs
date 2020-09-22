@@ -17,7 +17,7 @@ namespace Dal
             new CartEntity
             {
                 Id = "1b760d44-10eb-4596-9d6f-da45e4e9a228",
-                Name = "First Cart",
+                Name = "Second Cart",
                 UserId = "a7b420a1-66cc-42b3-8bc0-5bc3abf39850"
             }
         };
