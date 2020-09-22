@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
 using Backend_Shared.Interfaces.DataServices;
+using Backend_Shared.Interfaces.DataServices.Base;
 using Backend_Shared.Interfaces.DbServices.Base;
 using Dal.Interfaces.Dal;
 using Microsoft.Extensions.Logging;

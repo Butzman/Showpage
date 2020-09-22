@@ -1,17 +1,18 @@
 ﻿using System.Collections.Generic;
 using Dal.Entities.Base;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Dal.Entities
 {
-    public class CartEntity : EntityBase<string>
+    public class CartEntity : EntityBase<string>, IEntityTypeConfiguration<CartEntity>
     {
         public string UserId { get; set; }
         public string Name { get; set; }
 
-        public IList<string> ProductIds { get; set; } = new List<string>();
-
-        public static void ConfigureEntity(ModelBuilder modelBuilder)
+        public IList<ProductToCartEntity> Products { get; set; }= new List<ProductToCartEntity>();
+        
+        public void Configure(EntityTypeBuilder<CartEntity> builder)
         {
         }
     }

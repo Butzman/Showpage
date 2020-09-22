@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using Backend_Shared.Interfaces.DataServices;
+using Backend_Shared.Interfaces.DataServices.Base;
 using DynamicData;
 using DynamicData.Kernel;
 using Shared.Extensions;

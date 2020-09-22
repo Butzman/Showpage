@@ -79,6 +79,7 @@ namespace Api
             {
                 endpoints.MapControllers();
                 endpoints.MapHub<ProductHub>("/"+SignalrUrls.ProductsHub);
+                endpoints.MapHub<CartHub>("/"+SignalrUrls.CartsHub);
             });
 
 
@@ -92,6 +93,9 @@ namespace Api
 
             services.AddSingleton<IProductDataService, ProductDataService>();
             services.AddSingleton<IProductDbService, ProductDbService>();
+
+            services.AddSingleton<ICartDataService, CartDataService>();
+            services.AddSingleton<ICartDbService, CartDbService>();
         }
 
         public static void ConfigureAutomapper(IServiceCollection services)

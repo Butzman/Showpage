@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using Backend_Shared.Interfaces.DataServices;
+using Backend_Shared.Interfaces.DataServices.Base;
 using Backend_Shared.Interfaces.DbServices;
 using Backend_Shared.Interfaces.DbServices.Base;
 using Microsoft.AspNetCore.SignalR;
@@ -11,7 +13,7 @@ using Shared.Interfaces;
 
 namespace Api.Services
 {
-    public class DataServiceHubBase<TDto, TModel, TSaveModel, TId> : SendChangesHubBase<TDto, TId>
+    public class ConnectedHubBase<TDto, TModel, TSaveModel, TId> : SendChangesHubBase<TDto, TId>
         where TDto : IHaveAnId<TId>
         where TModel : IHaveAnId<TId>
         where TSaveModel : IHaveAnId<TId>
@@ -19,7 +21,7 @@ namespace Api.Services
         private readonly IDbServiceBase<TModel, TSaveModel, TId> _dbService;
         private readonly IMapper _mapper;
 
-        public DataServiceHubBase(IDbServiceBase<TModel,TSaveModel, TId> dbService, IDataServiceBase<TModel, TId> productDataService,
+        public ConnectedHubBase(IDbServiceBase<TModel,TSaveModel, TId> dbService, IDataServiceBase<TModel, TId> productDataService,
             IMapper mapper)
         {
             _dbService = dbService;
@@ -57,6 +59,9 @@ namespace Api.Services
 
         public override async Task OnConnectedAsync()
         {
+            var claims = Context.User.Claims;
+            var userId = claims.FirstOrDefault(x=>x.Type == ClaimTypes.NameIdentifier)?.Value;
+            
             if (Clients == null) return;
 
             var allModels = await _dbService.GetAll();

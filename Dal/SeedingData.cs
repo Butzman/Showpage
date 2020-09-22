@@ -10,30 +10,32 @@ namespace Dal
         {
             new CartEntity
             {
-                Id = Guid.NewGuid().ToString(),
+                Id = "4b760d44-10eb-4596-9d6f-da45e4e9a228",
                 Name = "First Cart",
-                ProductIds = new List<string>
-                {
-                    "4b760d44-10eb-4596-9d6f-da12e4e9a228",
-                    "4b760d45-10eb-4596-9d6f-da12e4e9a228",
-                    "4b760d47-10eb-4596-9d6f-da12e4e9a228",
-                },
-                UserId = "4b760d43-10eb-4596-9d6f-da12e4e9a228"
-            }, 
+                UserId = "a7b420a1-66cc-42b3-8bc0-5bc3abf39850"
+            },
             new CartEntity
             {
-                Id = Guid.NewGuid().ToString(),
+                Id = "1b760d44-10eb-4596-9d6f-da45e4e9a228",
                 Name = "First Cart",
-                ProductIds = new List<string>
-                {
-                    "4b760d46-10eb-4596-9d6f-da12e4e9a228",
-                    "4b760d47-10eb-4596-9d6f-da12e4e9a228",
-                    "4b760d48-10eb-4596-9d6f-da12e4e9a228",
-                    "4b760d49-10eb-4596-9d6f-da12e4e9a228",
-                },
-                UserId = "4b760d43-10eb-4596-9d6f-da12e4e9a228"
+                UserId = "a7b420a1-66cc-42b3-8bc0-5bc3abf39850"
             }
         };
+
+        public static readonly IList<ProductToCartEntity> ProductToCartEntities = new List<ProductToCartEntity>
+        {
+            new ProductToCartEntity {ProductId = "4b760d44-10eb-4596-9d6f-da12e4e9a228", CartId = "1b760d44-10eb-4596-9d6f-da45e4e9a228"},
+            new ProductToCartEntity {ProductId = "4b760d45-10eb-4596-9d6f-da12e4e9a228", CartId = "1b760d44-10eb-4596-9d6f-da45e4e9a228"},
+            new ProductToCartEntity {ProductId = "4b760d46-10eb-4596-9d6f-da12e4e9a228", CartId = "1b760d44-10eb-4596-9d6f-da45e4e9a228"},
+            new ProductToCartEntity {ProductId = "4b760d47-10eb-4596-9d6f-da12e4e9a228", CartId = "1b760d44-10eb-4596-9d6f-da45e4e9a228"},
+            new ProductToCartEntity {ProductId = "4b760d48-10eb-4596-9d6f-da12e4e9a228", CartId = "1b760d44-10eb-4596-9d6f-da45e4e9a228"},
+            new ProductToCartEntity {ProductId = "4b760d49-10eb-4596-9d6f-da12e4e9a228", CartId = "1b760d44-10eb-4596-9d6f-da45e4e9a228"},
+            new ProductToCartEntity {ProductId = "4b760d44-10eb-4596-9d6f-da12e4e9a228", CartId = "4b760d44-10eb-4596-9d6f-da45e4e9a228"},
+            new ProductToCartEntity {ProductId = "4b760d45-10eb-4596-9d6f-da12e4e9a228", CartId = "4b760d44-10eb-4596-9d6f-da45e4e9a228"},
+            new ProductToCartEntity {ProductId = "4b760d46-10eb-4596-9d6f-da12e4e9a228", CartId = "4b760d44-10eb-4596-9d6f-da45e4e9a228"},
+            new ProductToCartEntity {ProductId = "4b760d47-10eb-4596-9d6f-da12e4e9a228", CartId = "4b760d44-10eb-4596-9d6f-da45e4e9a228"}
+        };
+
 
         public static readonly IList<ProductEntity> Products = new List<ProductEntity>
         {

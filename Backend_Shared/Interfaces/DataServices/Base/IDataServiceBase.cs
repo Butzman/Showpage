@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using DynamicData;
 using Shared.Interfaces;
 
-namespace Backend_Shared.Interfaces.DataServices
+namespace Backend_Shared.Interfaces.DataServices.Base
 {
     public interface IDataServiceBase<TModel, TId>
         where TModel : IHaveAnId<TId>

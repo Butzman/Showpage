@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Dal.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,11 +7,11 @@ namespace Dal
 {
     public class DalContext : DbContext
     {
-        private readonly string _dbConnectionString;
+        private string _dbConnectionString;
         private DbContextOptions<DalContext> _dbContextOptions;
 
 
-        public DalContext() : this("C:\\Users\\butzh\\AppData\\Local\\CodersShop\\database_api.sqlite")
+        public DalContext()
         {
         }
 
@@ -26,12 +27,12 @@ namespace Dal
 
 
         public DbSet<ProductEntity> Products { get; set; }
+        public DbSet<CartEntity> Carts { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            ProductEntity.ConfigureEntity(modelBuilder);
-            CartEntity.ConfigureEntity(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(DalContext).Assembly);
 
             AddSeedingData(modelBuilder);
 
@@ -42,8 +43,12 @@ namespace Dal
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (_dbContextOptions == null)
+            {
+                _dbConnectionString ??= "C:\\Users\\butzh\\AppData\\Local\\CodersShop\\database_api.sqlite";
+                Console.WriteLine("Using Database: " + $"Data Source={_dbConnectionString}");
                 optionsBuilder.EnableSensitiveDataLogging()
                     .UseSqlite($"Data Source={_dbConnectionString}");
+            }
 
             base.OnConfiguring(optionsBuilder);
         }
@@ -52,6 +57,10 @@ namespace Dal
         {
             modelBuilder.Entity<ProductEntity>()
                 .HasData(SeedingData.Products.ToArray());
+            modelBuilder.Entity<CartEntity>()
+                .HasData(SeedingData.Carts.ToArray());
+            modelBuilder.Entity<ProductToCartEntity>()
+                .HasData(SeedingData.ProductToCartEntities.ToArray());
         }
     }
 }
