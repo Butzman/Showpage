@@ -9,6 +9,6 @@ namespace Shared.Dtos
         public string UserId { get; set; }
         public string Name { get; set; }
 
-        public IList<string> ProductIds { get; set; } = new List<string>();
+        public IList<ProductToCartDto> Products { get; set; } = new List<ProductToCartDto>();
     }
 }

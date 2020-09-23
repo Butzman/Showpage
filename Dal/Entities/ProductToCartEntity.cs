@@ -12,6 +12,9 @@ namespace Dal.Entities
         public CartEntity CartEntity { get; set; }
 
 
+        public int Amount { get; set; }
+
+
         public void Configure(EntityTypeBuilder<ProductToCartEntity> builder)
         {
             builder

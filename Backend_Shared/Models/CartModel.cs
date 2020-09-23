@@ -9,6 +9,6 @@ namespace Backend_Shared.Models
         public string UserId { get; set; }
         public string Name { get; set; }
 
-        public IList<string> ProductIds { get; set; } = new List<string>();
+        public IList<ProductToCartModel> Products { get; set; } = new List<ProductToCartModel>();
     }
 }
