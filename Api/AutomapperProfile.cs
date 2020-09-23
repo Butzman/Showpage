@@ -14,6 +14,9 @@ namespace Api
 
             CreateMap<CartDto, CartModel>();
             CreateMap<CartModel, CartDto>();
+
+            CreateMap<ProductToCartDto, ProductToCartModel>();
+            CreateMap<ProductToCartModel, ProductToCartDto>();
         }
     }
 }

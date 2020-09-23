@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendShared.Test", "Backe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend_Shared", "Backend_Shared\Backend_Shared.csproj", "{E317A09C-A983-4F66-A879-CCB3108959AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Test", "Api.Test\Api.Test.csproj", "{44781A85-6620-4A35-A976-E0B8F47604F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{E317A09C-A983-4F66-A879-CCB3108959AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E317A09C-A983-4F66-A879-CCB3108959AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E317A09C-A983-4F66-A879-CCB3108959AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44781A85-6620-4A35-A976-E0B8F47604F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44781A85-6620-4A35-A976-E0B8F47604F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44781A85-6620-4A35-A976-E0B8F47604F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44781A85-6620-4A35-A976-E0B8F47604F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
