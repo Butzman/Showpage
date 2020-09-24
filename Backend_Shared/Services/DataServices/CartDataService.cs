@@ -4,7 +4,7 @@ using Backend_Shared.Services.DataServices.Base;
 
 namespace Backend_Shared.Services.DataServices
 {
-    public class CartDataService: DataServiceBase<CartModel,string>, ICartDataService
+    public class CartDataService: DataServiceBase<CartModel,string>, ICartDataService, ICartObservableOfChangeSet
     {
         
     }

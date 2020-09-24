@@ -92,9 +92,11 @@ namespace Api
             services.AddSingleton<IContextFactory>(new ContextFactory(_configuration["Paths:DataBase"]));
 
             services.AddSingleton<IProductDataService, ProductDataService>();
+            services.AddSingleton<IProductObservableOfChangeSet, ProductDataService>();
             services.AddSingleton<IProductDbService, ProductDbService>();
 
             services.AddSingleton<ICartDataService, CartDataService>();
+            services.AddSingleton<ICartObservableOfChangeSet, CartDataService>();
             services.AddSingleton<ICartDbService, CartDbService>();
         }
 

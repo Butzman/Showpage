@@ -11,56 +11,18 @@ using Shared.Interfaces;
 
 namespace Backend_Shared.Services.DataServices.Base
 {
-    public class DataServiceBase<TModel, TId> : DisposableBase, IDataServiceBase<TModel, TId>
+    public class DataServiceBase<TModel, TId> : DisposableBase, IDataServiceBase<TModel, TId>, IObservable<ChangeSet<TModel, TId>>
         where TModel : IHaveAnId<TId>
     {
         public IObservable<ChangeSet<TModel, TId>> ObservableOfChangeSet
             => SubjectOfChangeSet.AsObservable();
-
-        public IObservable<IList<TModel>> ObservableOfAddOrUpdates
-            => SubjectOfAddOrUpdates.AsObservable();
-
-        public IObservable<IList<TModel>> ObservableOfRemoves
-            => SubjectOfRemoves.AsObservable();
+        
 
         protected readonly Subject<ChangeSet<TModel, TId>> SubjectOfChangeSet;
-        protected readonly Subject<IList<TModel>> SubjectOfAddOrUpdates;
-        protected readonly Subject<IList<TModel>> SubjectOfRemoves;
 
         public DataServiceBase()
         {
-            SubjectOfChangeSet = new Subject<ChangeSet<TModel, TId>>().DisposeWith(this);
-            SubjectOfAddOrUpdates = new Subject<IList<TModel>>().DisposeWith(this);
-            SubjectOfRemoves = new Subject<IList<TModel>>().DisposeWith(this);
-
-            ObservableOfChangeSet
-                .Do(changeSet =>
-                {
-                    var addOrUpdates = new List<TModel>();
-                    var removes = new List<TModel>();
-                    foreach (var change in changeSet)
-                    {
-                        switch (change.Reason)
-                        {
-                            case ChangeReason.Add:
-                            case ChangeReason.Update:
-                                addOrUpdates.Add(change.Current);
-                                break;
-                            case ChangeReason.Remove:
-                                removes.Add(change.Current);
-                                break;
-                            case ChangeReason.Refresh:
-                                break;
-                            case ChangeReason.Moved:
-                                break;
-                            default:
-                                throw new ArgumentOutOfRangeException();
-                        }
-                    }
-                    SubjectOfRemoves.OnNext(removes);
-                    SubjectOfAddOrUpdates.OnNext(addOrUpdates);
-                })
-                .Subscribe()
+            SubjectOfChangeSet = new Subject<ChangeSet<TModel, TId>>()
                 .DisposeWith(this);
         }
 
@@ -115,5 +77,8 @@ namespace Backend_Shared.Services.DataServices.Base
                 )
             );
         }
+
+        public IDisposable Subscribe(IObserver<ChangeSet<TModel, TId>> observer)
+            => SubjectOfChangeSet.Subscribe(observer);
     }
 }

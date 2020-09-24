@@ -16,7 +16,7 @@ namespace Api.Communication.Hubs
     {
         private readonly ICartDbService _dbService;
 
-        public CartHub(ICartDbService dbService, ICartDataService cartDataService, IMapper mapper) : base(dbService, cartDataService, mapper)
+        public CartHub(ICartDbService dbService, ICartObservableOfChangeSet cartObservableOfChangeSet, IMapper mapper) : base(dbService, cartObservableOfChangeSet, mapper)
         {
             _dbService = dbService;
         }

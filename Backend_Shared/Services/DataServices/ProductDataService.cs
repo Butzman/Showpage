@@ -4,7 +4,7 @@ using Backend_Shared.Services.DataServices.Base;
 
 namespace Backend_Shared.Services.DataServices
 {
-    public class ProductDataService: DataServiceBase<ProductModel,string>, IProductDataService
+    public class ProductDataService: DataServiceBase<ProductModel,string>, IProductDataService, IProductObservableOfChangeSet
     {
             
     }

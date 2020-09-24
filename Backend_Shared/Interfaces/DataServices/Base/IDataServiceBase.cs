@@ -9,8 +9,6 @@ namespace Backend_Shared.Interfaces.DataServices.Base
         where TModel : IHaveAnId<TId>
     {
         IObservable<ChangeSet<TModel, TId>> ObservableOfChangeSet { get; }
-        IObservable<IList<TModel>> ObservableOfAddOrUpdates { get; }
-        IObservable<IList<TModel>> ObservableOfRemoves { get; }
         void HandleAddOrUpdate(TModel model);
         void HandleAddOrUpdate(IEnumerable<TModel> models);
         void HandleRemove(TId id);
