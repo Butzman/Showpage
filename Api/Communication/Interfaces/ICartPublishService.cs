@@ -1,4 +1,4 @@
-﻿namespace Api.Communication.Services
+﻿namespace Api.Communication.Interfaces
 {
     public interface ICartPublishService
     {

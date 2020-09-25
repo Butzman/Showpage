@@ -1,4 +1,5 @@
 ﻿using Api.Communication.Hubs.Base;
+using Api.Communication.Interfaces;
 using Api.Communication.Services;
 using AutoMapper;
 using Backend_Shared.Interfaces.DbServices;

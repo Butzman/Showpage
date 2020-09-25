@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using Backend_Shared.Interfaces.DbServices.Base;
-using DynamicData;
+using Microsoft.AspNetCore.SignalR;
 using Shared.Interfaces;
 
 namespace Api.Communication.Hubs.Base
 {
-    public class ConnectedHub<TDto, TModel, TSaveModel, TId> : SendChangesHub<TDto, TModel, TSaveModel, TId>
+    public class ConnectedHub<TDto, TModel, TSaveModel, TId> : Hub<ISendChangesClient<TDto, TId>>
         where TDto : IHaveAnId<TId>
         where TModel : IHaveAnId<TId>
         where TSaveModel : IHaveAnId<TId>
@@ -20,13 +18,17 @@ namespace Api.Communication.Hubs.Base
 
         public ConnectedHub(
             IDbServiceBase<TModel, TSaveModel, TId> dbService,
-            IMapper mapper
-        ) : base(mapper, dbService)
+            IMapper mapper)
         {
             _dbService = dbService;
             _mapper = mapper;
         }
 
+        public virtual async Task Save(TDto dto)
+        {
+            var model = _mapper.Map<TSaveModel>(dto);
+            await _dbService.Save(model);
+        }
 
         public override async Task OnConnectedAsync()
         {

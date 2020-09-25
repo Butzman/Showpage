@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Api.Communication.Hubs;
+using Api.Communication.Interfaces;
 using Api.Communication.Services;
 using AutoMapper;
 using AutoMapper.EquivalencyExpression;
@@ -107,7 +108,7 @@ namespace Api
             services.AddSingleton<IContextFactory>(new ContextFactory(_configuration["Paths:DataBase"]));
 
             var productDataService = new ProductDataService();
-            services.AddSingleton<IProductObservableOfChangeSet>(productDataService);
+            services.AddSingleton<IProductObservable>(productDataService);
             services.AddSingleton<IProductDataService>(productDataService);
 
             services.AddSingleton<IProductDbService, ProductDbService>();
@@ -115,7 +116,7 @@ namespace Api
 
             
             var cartDataService = new CartDataService();
-            services.AddSingleton<ICartObservableOfChangeSet>(cartDataService);
+            services.AddSingleton<ICartObservable>(cartDataService);
             services.AddSingleton<ICartDataService>(cartDataService);
 
             services.AddSingleton<ICartDbService, CartDbService>();

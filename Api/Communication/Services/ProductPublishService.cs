@@ -1,4 +1,5 @@
 ﻿using Api.Communication.Hubs;
+using Api.Communication.Interfaces;
 using AutoMapper;
 using Backend_Shared.Interfaces.DataServices;
 using Backend_Shared.Models;
@@ -12,8 +13,8 @@ namespace Api.Communication.Services
     {
         private readonly IMapper _mapper;
 
-        public ProductPublishService(IProductObservableOfChangeSet observableOfChangeSet, IMapper mapper, IHubContext<ProductHub, ISendChangesClient<ProductDto, string>> hubContext)
-            : base(observableOfChangeSet, mapper, hubContext)
+        public ProductPublishService(IProductObservable observable, IMapper mapper, IHubContext<ProductHub, ISendChangesClient<ProductDto, string>> hubContext)
+            : base(observable, mapper, hubContext)
         {
             _mapper = mapper;
         }

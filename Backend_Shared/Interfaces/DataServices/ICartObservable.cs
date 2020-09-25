@@ -4,7 +4,7 @@ using DynamicData;
 
 namespace Backend_Shared.Interfaces.DataServices
 {
-    public interface ICartObservableOfChangeSet: IObservable<ChangeSet<CartModel,string>>
+    public interface ICartObservable: IObservable<ChangeSet<CartModel,string>>
     {
         
     }

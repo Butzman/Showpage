@@ -4,7 +4,7 @@ using DynamicData;
 
 namespace Backend_Shared.Interfaces.DataServices
 {
-    public interface IProductObservableOfChangeSet: IObservable<ChangeSet<ProductModel,string>>
+    public interface IProductObservable: IObservable<ChangeSet<ProductModel,string>>
     {
         
     }

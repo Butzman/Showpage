@@ -3,6 +3,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Api.Communication.Hubs.Base;
+using Api.Communication.Interfaces;
 using Api.Communication.Services;
 using AutoMapper;
 using Backend_Shared.Interfaces.DbServices;

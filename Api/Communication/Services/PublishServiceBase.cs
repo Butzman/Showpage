@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
+using Api.Communication.Interfaces;
 using AutoMapper;
 using DynamicData;
 using Microsoft.AspNetCore.SignalR;
@@ -21,18 +22,18 @@ namespace Api.Communication.Services
         private readonly IHubContext<THub, ISendChangesClient<TDto, TId>> _hubContext;
 
         public PublishServiceBase(
-            IObservable<ChangeSet<TModel,TId>> observableOfChangeSet,
+            IObservable<ChangeSet<TModel,TId>> observable,
             IMapper mapper,
             IHubContext<THub, ISendChangesClient<TDto, TId>> hubContext
         )
         {
             _mapper = mapper;
             _hubContext = hubContext;
-            observableOfChangeSet
+            observable
                 .WhereReasonsAre(ChangeReason.Add, ChangeReason.Update)
                 .SelectMany(SendAddedOrUpdated)
                 .Subscribe();
-            observableOfChangeSet
+            observable
                 .WhereReasonsAre(ChangeReason.Remove)
                 .SelectMany(SendDeletedByIds)
                 .Subscribe();
