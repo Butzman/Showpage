@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
-using Backend_Shared.Interfaces.DataServices;
 using Backend_Shared.Interfaces.DataServices.Base;
 using DynamicData;
 using DynamicData.Kernel;
@@ -14,9 +13,7 @@ namespace Backend_Shared.Services.DataServices.Base
     public class DataServiceBase<TModel, TId> : DisposableBase, IDataServiceBase<TModel, TId>, IObservable<ChangeSet<TModel, TId>>
         where TModel : IHaveAnId<TId>
     {
-        public IObservable<ChangeSet<TModel, TId>> ObservableOfChangeSet
-            => SubjectOfChangeSet.AsObservable();
-        
+       
 
         protected readonly Subject<ChangeSet<TModel, TId>> SubjectOfChangeSet;
 

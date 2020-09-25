@@ -1,5 +1,7 @@
 using System;
+using System.Threading.Tasks;
 using Api.Communication.Hubs;
+using Api.Communication.Services;
 using AutoMapper;
 using AutoMapper.EquivalencyExpression;
 using Backend_Shared.Interfaces.DataServices;
@@ -8,6 +10,7 @@ using Backend_Shared.Services.DataServices;
 using Dal;
 using Dal.Interfaces.Dal;
 using Dal.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -31,8 +34,12 @@ namespace Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSignalR();
-            services.AddAuthentication("Bearer")
-                .AddJwtBearer("Bearer", config =>
+            services.AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
+                .AddJwtBearer(config =>
                 {
                     config.Authority = "https://localhost:5003/";
                     config.Audience = "Api_CodersShop";
@@ -40,6 +47,14 @@ namespace Api
                     config.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateAudience = false,
+                    };
+                    config.Events = new JwtBearerEvents
+                    {
+                        OnMessageReceived = context =>
+                        {
+                            context.Token = context.Request.Query["access_token"];
+                            return Task.CompletedTask;
+                        }
                     };
                 });
 
@@ -78,8 +93,8 @@ namespace Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapHub<ProductHub>("/"+SignalrUrls.ProductsHub);
-                endpoints.MapHub<CartHub>("/"+SignalrUrls.CartsHub);
+                endpoints.MapHub<ProductHub>("/" + SignalrUrls.ProductsHub);
+                endpoints.MapHub<CartHub>("/" + SignalrUrls.CartsHub);
             });
 
 
@@ -91,13 +106,20 @@ namespace Api
         {
             services.AddSingleton<IContextFactory>(new ContextFactory(_configuration["Paths:DataBase"]));
 
-            services.AddSingleton<IProductDataService, ProductDataService>();
-            services.AddSingleton<IProductObservableOfChangeSet, ProductDataService>();
-            services.AddSingleton<IProductDbService, ProductDbService>();
+            var productDataService = new ProductDataService();
+            services.AddSingleton<IProductObservableOfChangeSet>(productDataService);
+            services.AddSingleton<IProductDataService>(productDataService);
 
-            services.AddSingleton<ICartDataService, CartDataService>();
-            services.AddSingleton<ICartObservableOfChangeSet, CartDataService>();
+            services.AddSingleton<IProductDbService, ProductDbService>();
+            services.AddSingleton<IProductPublishService, ProductPublishService>();
+
+            
+            var cartDataService = new CartDataService();
+            services.AddSingleton<ICartObservableOfChangeSet>(cartDataService);
+            services.AddSingleton<ICartDataService>(cartDataService);
+
             services.AddSingleton<ICartDbService, CartDbService>();
+            services.AddSingleton<ICartPublishService, CartPublishService>();
         }
 
         public static void ConfigureAutomapper(IServiceCollection services)

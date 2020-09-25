@@ -1,24 +1,28 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Api.Services;
+using Api.Communication.Hubs.Base;
+using Api.Communication.Services;
 using AutoMapper;
-using Backend_Shared.Interfaces.DataServices;
 using Backend_Shared.Interfaces.DbServices;
 using Backend_Shared.Models;
-using Microsoft.AspNetCore.Authorization;
 using Shared.Dtos;
 
 namespace Api.Communication.Hubs
 {
-    [Authorize]
-    public class CartHub : ConnectedHubBase<CartDto, CartModel, CartModel, string>
+    public class CartHub : ConnectedHub<CartDto, CartModel, CartModel, string>
     {
         private readonly ICartDbService _dbService;
+        private readonly IMapper _mapper;
 
-        public CartHub(ICartDbService dbService, ICartObservableOfChangeSet cartObservableOfChangeSet, IMapper mapper) : base(dbService, cartObservableOfChangeSet, mapper)
+        public CartHub(
+            ICartPublishService cartPublishService,
+            ICartDbService dbService,
+            IMapper mapper) : base(dbService, mapper)
         {
             _dbService = dbService;
+            _mapper = mapper;
         }
 
         public override async Task OnConnectedAsync()
@@ -32,11 +36,9 @@ namespace Api.Communication.Hubs
 
             if (allModels.Count == 0) return;
 
-            var filteredDtos = await GetDto(allModels.Where(x => x.UserId.Equals(userId)).ToList());
+            var filteredDtos = _mapper.Map<IList<CartDto>>(allModels.Where(x => x.UserId.Equals(userId)).ToList());
 
-            var listener = Clients.Caller;
-            await SendAll(filteredDtos.ToList(), listener);
-            
+            await Clients.Caller.SendAll(filteredDtos.ToList());
         }
     }
 }

@@ -8,7 +8,6 @@ namespace Backend_Shared.Interfaces.DataServices.Base
     public interface IDataServiceBase<TModel, TId>
         where TModel : IHaveAnId<TId>
     {
-        IObservable<ChangeSet<TModel, TId>> ObservableOfChangeSet { get; }
         void HandleAddOrUpdate(TModel model);
         void HandleAddOrUpdate(IEnumerable<TModel> models);
         void HandleRemove(TId id);
