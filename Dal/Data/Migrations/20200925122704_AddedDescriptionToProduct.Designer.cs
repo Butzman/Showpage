@@ -2,14 +2,16 @@
 using Dal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Dal.Data.Migrations
 {
     [DbContext(typeof(DalContext))]
-    partial class DalContextModelSnapshot : ModelSnapshot
+    [Migration("20200925122704_AddedDescriptionToProduct")]
+    partial class AddedDescriptionToProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,43 +69,37 @@ namespace Dal.Data.Migrations
                         new
                         {
                             Id = "4b760d44-10eb-4596-9d6f-da12e4e9a228",
-                            Description = "This is a Descriptions. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
-                            EAN = "544388910",
+                            EAN = "264080034",
                             Name = "Vr Glasses"
                         },
                         new
                         {
                             Id = "4b760d45-10eb-4596-9d6f-da12e4e9a228",
-                            Description = "This is a Descriptions. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
-                            EAN = "195654221",
+                            EAN = "077676738",
                             Name = "Keyboard"
                         },
                         new
                         {
                             Id = "4b760d46-10eb-4596-9d6f-da12e4e9a228",
-                            Description = "This is a Descriptions. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
-                            EAN = "094139697",
+                            EAN = "761201977",
                             Name = "Monitor"
                         },
                         new
                         {
                             Id = "4b760d47-10eb-4596-9d6f-da12e4e9a228",
-                            Description = "This is a Descriptions. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
-                            EAN = "926004429",
+                            EAN = "920752782",
                             Name = "Ventilator"
                         },
                         new
                         {
                             Id = "4b760d48-10eb-4596-9d6f-da12e4e9a228",
-                            Description = "This is a Descriptions. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
-                            EAN = "698472040",
+                            EAN = "717663653",
                             Name = "Charger"
                         },
                         new
                         {
                             Id = "4b760d49-10eb-4596-9d6f-da12e4e9a228",
-                            Description = "This is a Descriptions. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
-                            EAN = "391356246",
+                            EAN = "308691606",
                             Name = "Cup"
                         });
                 });
@@ -130,61 +126,61 @@ namespace Dal.Data.Migrations
                         {
                             CartId = "1b760d44-10eb-4596-9d6f-da45e4e9a228",
                             ProductId = "4b760d44-10eb-4596-9d6f-da12e4e9a228",
-                            Amount = 2
+                            Amount = 0
                         },
                         new
                         {
                             CartId = "1b760d44-10eb-4596-9d6f-da45e4e9a228",
                             ProductId = "4b760d45-10eb-4596-9d6f-da12e4e9a228",
-                            Amount = 2
+                            Amount = 0
                         },
                         new
                         {
                             CartId = "1b760d44-10eb-4596-9d6f-da45e4e9a228",
                             ProductId = "4b760d46-10eb-4596-9d6f-da12e4e9a228",
-                            Amount = 4
+                            Amount = 0
                         },
                         new
                         {
                             CartId = "1b760d44-10eb-4596-9d6f-da45e4e9a228",
                             ProductId = "4b760d47-10eb-4596-9d6f-da12e4e9a228",
-                            Amount = 2
+                            Amount = 0
                         },
                         new
                         {
                             CartId = "1b760d44-10eb-4596-9d6f-da45e4e9a228",
                             ProductId = "4b760d48-10eb-4596-9d6f-da12e4e9a228",
-                            Amount = 4
+                            Amount = 0
                         },
                         new
                         {
                             CartId = "1b760d44-10eb-4596-9d6f-da45e4e9a228",
                             ProductId = "4b760d49-10eb-4596-9d6f-da12e4e9a228",
-                            Amount = 5
+                            Amount = 0
                         },
                         new
                         {
                             CartId = "4b760d44-10eb-4596-9d6f-da45e4e9a228",
                             ProductId = "4b760d44-10eb-4596-9d6f-da12e4e9a228",
-                            Amount = 6
+                            Amount = 0
                         },
                         new
                         {
                             CartId = "4b760d44-10eb-4596-9d6f-da45e4e9a228",
                             ProductId = "4b760d45-10eb-4596-9d6f-da12e4e9a228",
-                            Amount = 1
+                            Amount = 0
                         },
                         new
                         {
                             CartId = "4b760d44-10eb-4596-9d6f-da45e4e9a228",
                             ProductId = "4b760d46-10eb-4596-9d6f-da12e4e9a228",
-                            Amount = 4
+                            Amount = 0
                         },
                         new
                         {
                             CartId = "4b760d44-10eb-4596-9d6f-da45e4e9a228",
                             ProductId = "4b760d47-10eb-4596-9d6f-da12e4e9a228",
-                            Amount = 3
+                            Amount = 0
                         });
                 });
 

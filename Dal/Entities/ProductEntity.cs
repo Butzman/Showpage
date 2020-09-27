@@ -9,6 +9,8 @@ namespace Dal.Entities
         public string Name { get; set; }
         public string EAN { get; set; }
 
+        public string Description { get; set; }
+
         public void Configure(EntityTypeBuilder<ProductEntity> builder)
         {
             
