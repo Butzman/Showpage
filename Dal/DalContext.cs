@@ -44,7 +44,7 @@ namespace Dal
         {
             if (_dbContextOptions == null)
             {
-                _dbConnectionString ??= "C:\\Users\\butzh\\AppData\\Local\\CodersShop\\database_api.sqlite";
+                _dbConnectionString ??= "C:\\Users\\andre\\AppData\\Local\\CodersShop\\database_api.sqlite";
                 Console.WriteLine("Using Database: " + $"Data Source={_dbConnectionString}");
                 optionsBuilder.EnableSensitiveDataLogging()
                     .UseSqlite($"Data Source={_dbConnectionString}");

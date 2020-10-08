@@ -78,7 +78,8 @@ namespace IdentityServer
                 .AddInMemoryApiScopes(Configuration.GetApis())
                 .AddInMemoryClients(Configuration.GetClients())
                 .AddInMemoryIdentityResources(Configuration.GetIdentityResources())
-                .AddSigningCredential(certificate);
+                .AddDeveloperSigningCredential();
+            // .AddSigningCredential(certificate);
 
             services.AddAuthentication()
                 .AddFacebook(config =>
@@ -86,7 +87,6 @@ namespace IdentityServer
                     config.ClientId = _config["AuthClients:Google:ClientId"];
                     config.ClientSecret = _config["AuthClients:Google:ClientSecret"];
                 });
-
 
             services.Configure<SmtpSettings>(_config.GetSection("SmtpSettings"));
             services.AddSingleton<IMailerService, MailerService>();

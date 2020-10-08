@@ -23,7 +23,7 @@ namespace Api.Communication.Controllers
         {
             var claims = User.Claims;
             var userId = claims.FirstOrDefault(x=>x.Type == ClaimTypes.NameIdentifier)?.Value;
-            return "UserId: "+ userId;
+            return userId;
         }
     }
 }
