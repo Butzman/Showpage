@@ -30,6 +30,9 @@ namespace Api.Communication.Hubs.Base
             await _dbService.Save(model);
         }
 
+        public virtual async Task Delete(TId id)
+        => await _dbService.Delete(id);
+
         public override async Task OnConnectedAsync()
         {
             if (Clients == null) return;
