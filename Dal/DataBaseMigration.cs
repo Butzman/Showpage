@@ -38,7 +38,7 @@ namespace Dal
             try
             {
                 var backupConnection =
-                    new SqliteConnection($"Data Source={dbPath}.{DateTime.Now:yyyy-MM-dd--HH-mm-ss}.backup");
+                    new SqliteConnection($"{dbPath}.{DateTime.Now:yyyy-MM-dd--HH-mm-ss}.backup");
                 await backupConnection.OpenAsync();
                 var dbConnection = ((SqliteConnection) context.Database.GetDbConnection());
                 await dbConnection.OpenAsync();

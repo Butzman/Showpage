@@ -24,11 +24,11 @@ namespace Api
 {
     public class Startup
     {
-        private readonly IConfiguration _configuration;
+        private readonly IConfiguration _config;
 
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration config)
         {
-            _configuration = configuration;
+            _config = config;
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -41,7 +41,7 @@ namespace Api
                 })
                 .AddJwtBearer(config =>
                 {
-                    config.Authority = "https://localhost:5003/";
+                    config.Authority = _config.GetValue<string>("Urls:IdentityServer");
                     config.Audience = "Api_CodersShop";
                     config.RequireHttpsMetadata = false;
                     config.TokenValidationParameters = new TokenValidationParameters
@@ -99,13 +99,17 @@ namespace Api
             });
 
 
-            DataBaseMigration.EnsureMigrated(app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope().ServiceProvider, _configuration["Paths:DataBase"]).Wait();
+            // DataBaseMigration.EnsureMigrated(
+            //     app.ApplicationServices
+            //         .GetRequiredService<IServiceScopeFactory>()
+            //         .CreateScope().ServiceProvider,
+            //     "Data Source=" + Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), _config.GetConnectionString("DataBase"))).Wait();
         }
 
 
         private void RegisterIoc(IServiceCollection services)
         {
-            services.AddSingleton<IContextFactory>(new ContextFactory(_configuration["Paths:DataBase"]));
+            services.AddSingleton<IContextFactory>(new ContextFactory());
 
             var productDataService = new ProductDataService();
             services.AddSingleton<IProductObservable>(productDataService);
