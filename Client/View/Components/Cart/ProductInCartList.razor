@@ -1,0 +1,80 @@
+﻿@using BlazorClient.Logic.Models
+@using DynamicData
+@using DynamicData.Binding
+@using BlazorClient.Logic.Interfaces.DataServices
+@using System.Reactive.Linq
+@using Shared.Extensions
+
+@inherits BlazorClient.Logic.View.ComponentDisposableBase
+
+@inject ICartDataService CartDataService
+@inject IProductDataService ProductDataService
+@inject IToastService ToastService
+
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">EAN</th>
+        <th scope="col" style="text-align: center">Amount</th>
+        <th scope="col" style="text-align: center">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    @for (var i = 0; i < Products.Count; i++)
+    {
+        var product = Products[i];
+        var isProductAvailable = product.Name != "Product not available";
+        <tr class="@(isProductAvailable ? "" : "table-danger")">
+            <td>@(i + 1)</td>
+            <th scope="row">
+                <span class=" @(isProductAvailable ? "" : "text-danger text-muted")"> @product.Name</span>
+            </th>
+            <td>@product.EAN</td>
+            <td style="text-align: center">
+                <NumberButtonInputGroup Disabled="@(!isProductAvailable)" OnValueChanged="@(amount => AmountChanged(product.ProductId, amount))" Value="@product.Amount"/>
+            </td>
+            <td style="text-align: center">
+                <button class="btn btn-sm btn-danger" @onclick=@(() => OpenModal(product.ProductId))>X</button>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<Modal
+    @ref="DeleteModal"
+     ModalId="@_modalDeleteId"
+     Title="Delete item from Cart"
+     CancelButtonText="Cancel"
+     ConfirmButtonText="Delete">
+    <p>Please confirm to delete the Item from the Cart.</p>
+</Modal>
+
+@code {
+
+    [Parameter]
+    public IObservableCollection<ProductInLocalCartListViewModel> Products { get; set; }
+
+    private Modal DeleteModal { get; set; }
+    private readonly string _modalDeleteId = Guid.NewGuid().ToString();
+
+    private async Task OpenModal(string id)
+    {
+        var result = await DeleteModal.Open();
+        if (result)
+            DeleteItemFromCart(id);
+    }
+
+    private void DeleteItemFromCart(string id)
+    {
+        CartDataService.LocalCartSourceCache.RemoveKey(id);
+        ToastService.ShowError("", "Item deleted!");
+    }
+
+    private void AmountChanged(string productId, int amount)
+        => CartDataService.LocalCartSourceCache.AddOrUpdate(new ProductInLocalCartModel {ProductId = productId, Amount = amount});
+
+}

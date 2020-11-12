@@ -1,0 +1,17 @@
+﻿@import "bootstrap/bootstrap.custom.scss";
+
+.round-and-red {
+  border: 1px $danger solid;
+  border-radius: 50%;
+  color: $danger;
+  background-color: black;
+  height: 28px;
+  width: 28px;
+  text-align: center;
+}
+
+.welcome-spacer {
+  @include media-breakpoint-up(lg) {
+    padding: 150px;
+  }
+}

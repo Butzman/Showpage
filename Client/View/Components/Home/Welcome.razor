@@ -1,0 +1,59 @@
+﻿<link href="css/welcome.min.css" rel="stylesheet">
+
+@inject IJSRuntime JsRuntime
+
+<AuthorizeView>
+    <Authorized>
+        <section class="bg-black pt-5 pb-4 pb-md-5">
+            <div class="home-img img-cover bg-auto d-none d-lg-block" style="background-image: url('images/welcome_background.png')"></div>
+            <div class="container bg-content py-5 my-md-5 text-center text-md-left" style="top: -60px;">
+                <div class="pb-md-5 mt-5 mb-md-5">
+                    <div class="display-4 text-white" style="font-weight: 900">
+                        <span class="d-block home-heading text-white">Welcome to</span>
+                        <span class="d-block home-heading text-white">my Showpage!</span>
+                    </div>
+                    <div class="text-white my-3 lead">
+                        Here you can find a simple shoping page.
+                    </div>
+                    <href class="btn btn-outline-warning" @onclick="@OnShowMoreClick">Show more</href>
+                </div>
+            </div>
+        </section>
+    </Authorized>
+    <NotAuthorized>
+        <section class="bg-black pt-5 pb-4 pb-md-5 h-100">
+            <div class="home-img img-cover bg-auto d-none d-lg-block" style="background-image: url('images/welcome_background_not_authorized.png')"></div>
+            <div class="container bg-content py-5 my-md-5 text-center text-md-left" style="top: -60px;">
+                <div class="pb-md-5 mt-5 mb-md-5">
+                    <div class="display-4 text-white" style="font-weight: 900">
+                        <span class="d-block font-fam-tomorrow text-white">Ohh, not </span>
+                        <span class="d-block font-fam-tomorrow text-white">logged in yet?</span>
+                    </div>
+                    <div class="text-white my-3 lead">
+                        Log in or create a new account to unlock the whole content.
+                    </div>
+                    <div class="row align-items-center m-0" style="">
+                        <a class="btn btn-outline-success" href="authentication/login">Log in</a>
+                        <div
+                            class="round-and-red mx-2"
+                            data-toggle="tooltip"
+                            data-placement="right"
+                            data-html="true"
+                            title="You can also use the Test Account:<br/> Name: bob<br/> Pass: Pass123$">
+                            ?
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </NotAuthorized>
+</AuthorizeView>
+<div class="bg-black welcome-spacer">x</div>
+
+
+@code
+{
+    private void OnShowMoreClick()
+        => JsRuntime.InvokeVoidAsync("scrollToElementId", "about-this-page");
+}

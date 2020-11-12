@@ -1,0 +1,83 @@
+﻿@using BlazorClient.Logic.Interfaces.DataServices;
+@using BlazorClient.Logic.Models
+@using DynamicData
+@using DynamicData.Binding
+@using Shared.Dtos
+@using Shared.Extensions
+@using Blazored.LocalStorage
+
+@inject ICartDataService CartDataService;
+@inject IToastService ToastService;
+
+@inherits BlazorClient.Logic.View.ComponentDisposableBase
+
+<button class="btn btn-outline-success mx-4" @onclick="@(LoadCartFromDb)">Load Cart</button>
+
+<FormModal
+    @ref="LoadCartModal"
+     TModel="CartLoadResult"
+     Title="Load Cart"
+     ModalId="@Guid.NewGuid().ToString()"
+     ButtonText="Load Cart"
+     Model="_cartLoadResult">
+    <InputSelect class="custom-select" @bind-Value="@LoadCartModal.Model.CartId">
+        <option selected>Choose a Cart...</option>
+        @foreach (var cart in Carts)
+        {
+            <option value="@cart.Id">@cart.Name</option>
+        }
+    </InputSelect>
+</FormModal>
+
+
+@code {
+
+    private IObservableCollection<CartDto> Carts { get; }
+        = new ObservableCollectionExtended<CartDto>();
+
+    private CartLoadResult _cartLoadResult = new CartLoadResult();
+    private FormModal<CartLoadResult> LoadCartModal { get; set; }
+
+    protected override void OnInitialized()
+    {
+        CartDataService.ModelCache
+            .Connect()
+            .Bind(Carts)
+            .Subscribe()
+            .DisposeWith(this);
+
+        base.OnInitialized();
+    }
+
+    private async Task LoadCartFromDb()
+    {
+        var result = await LoadCartModal.Open();
+        if(!result.IsSuccess) return;
+
+        if (string.IsNullOrEmpty(result.Result.CartId)) return;
+
+        var cartDto = CartDataService.ModelCache.Items.FirstOrDefault(x => x.Id.Equals(result.Result.CartId));
+
+        if (cartDto == null)
+        {
+            ToastService.ShowError("Couldn't load cart. Cart not found.");
+            return;
+        }
+
+        CartDataService.LocalCartSourceCache
+            .Edit(innerList =>
+            {
+                innerList.Clear();
+                cartDto.Products.ForEach(item => innerList.AddOrUpdate(new ProductInLocalCartModel {Amount = item.Amount, ProductId = item.ProductId}));
+            });
+
+        await CartDataService.ChangeLoadedCartIdAsync(cartDto.Id);
+        StateHasChanged();
+    }
+
+    private class CartLoadResult
+    {
+        public string CartId { get; set; }
+    }
+
+}

@@ -1,0 +1,42 @@
+﻿@using Shared.Dtos
+@using Microsoft.AspNetCore.Components.Forms
+@using BlazorClient.Logic.Interfaces.Communication.Hub
+
+@inject IProductHubService ProductHubService
+
+<EditForm Model="@ProductDto" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator/>
+
+    <div class="form-group ">
+        <label for="NameInput">
+            Name:
+        </label>
+        <InputText id="NameInput" class="form-control" @bind-Value="ProductDto.Name"/>
+    </div>
+    <div class="form-group">
+        <label for="EANInput">
+            EAN:
+        </label>
+        <InputText id="EANInput" class="form-control" @bind-Value="ProductDto.EAN"/>
+    </div>
+    <div class="form-group">
+        <label for="DescriptionInput">
+            Description:
+        </label>
+        <InputTextArea id="DescriptionInput" class="form-control" @bind-Value="ProductDto.Description"/>
+    </div>
+    <ValidationSummary/>
+    <div class="form-row align-items-end">
+        <button type="submit" class="btn btn-success">Save</button>
+    </div>
+</EditForm>
+
+@code {
+    public ProductDto ProductDto { get; set; } = new ProductDto();
+
+    [Parameter]
+    public Action OnValidSubmit { get; set; }
+
+    private void HandleValidSubmit()
+        => OnValidSubmit();
+}

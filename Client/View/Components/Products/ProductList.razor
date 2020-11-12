@@ -1,0 +1,125 @@
+﻿@using DynamicData
+@using BlazorClient.Logic.Interfaces.DataServices
+@using BlazorClient.Logic.Models
+@using DynamicData.Binding
+@using Shared.Dtos
+@using Shared.Extensions
+@using BlazorClient.Logic.Interfaces.Communication.Hub
+
+@inherits BlazorClient.Logic.View.ComponentDisposableBase
+
+@inject NavigationManager Navigation
+@inject IProductDataService ProductDataService
+@inject ICartDataService CartDataService
+@inject IProductHubService ProductHubService
+@inject IJSRuntime JsRuntime
+
+<div class="row justify-content-between">
+    @foreach (var product in ProductListViewModels)
+    {
+        <div class="col-lg-6">
+            <div class="jumbotron p-4 w-100">
+                <h1 class="display-6">@product.ProductDto.Name</h1>
+                <p class="lead">EAN | @product.ProductDto.EAN</p>
+                <hr class="my-4">
+                <p>@product.ProductDto.Description</p>
+                <p>
+                    <div class="row m-0">
+                        @if (product.IsInLocalCart)
+                        {
+                            <span
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                data-html="true"
+                                title="Article is already in Cart.">
+                                <button
+                                    class="btn btn-success mr-3"
+                                    disabled
+                                    style="pointer-events: none;">
+                                    Add to Cart
+                                </button>
+                            </span>
+                        }
+                        else
+                        {
+                            <button
+                                class="btn btn-success mr-3"
+                                @onclick="@(e => AddToCart(product.ProductDto.Id))">
+                                Add to Cart
+                            </button>
+                        }
+                        
+                        <button class="btn btn-warning mr-3" @onclick="@(() => OpenProductModal(product.ProductDto))">Edit Details</button>
+                        <button class="btn btn-outline-danger mr-3" @onclick="@(() => OpenDeleteModal(product.ProductDto.Id))">
+                            <i class="oi oi-trash"/>
+                        </button>
+                    </div>
+                </p>
+            </div>
+        </div>
+    }
+</div>
+
+<Modal
+    @ref="DeleteModal"
+     ModalId="@_modalDeleteId"
+     Title="Delete"
+     CancelButtonText="Cancel"
+     ConfirmButtonText="Delete">
+    <p>Please confirm to delete the Item from the Cart.</p>
+</Modal>
+
+@code
+{
+    [Parameter]
+    public Action<ProductDto> OpenProductModal { get; set; }
+
+    private Modal DeleteModal { get; set; }
+    private readonly string _modalDeleteId = Guid.NewGuid().ToString();
+
+    private IObservableCollection<ProductListViewModel> ProductListViewModels { get; }
+        = new ObservableCollectionExtended<ProductListViewModel>();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JsRuntime.InvokeVoidAsync("SetTooltip");
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    protected override void OnInitialized()
+    {
+        ProductListViewModels.CollectionChanged += (sender, args) => StateHasChanged();
+
+        ProductDataService.ModelCache
+            .Connect()
+            .LeftJoin(CartDataService.LocalCartSourceCache.Connect(),
+                productInLocalCartModel => productInLocalCartModel.ProductId,
+                (productDto, optional) => new ProductListViewModel
+                {
+                    ProductDto = productDto,
+                    IsInLocalCart = optional.HasValue && ProductDataService.ModelCache.Items.Any(x => x.Id.Equals(optional.Value.ProductId))
+                })
+            .Bind(ProductListViewModels)
+            .Subscribe()
+            .DisposeWith(this);
+
+        base.OnInitialized();
+    }
+
+    private void AddToCart(string id)
+    {
+        var productInLocalCartModel = CartDataService.LocalCartSourceCache.Items.FirstOrDefault(x => x.ProductId.Equals(id));
+        var amount = 1;
+        if (productInLocalCartModel != null)
+            amount = productInLocalCartModel.Amount + 1;
+        CartDataService.LocalCartSourceCache.AddOrUpdate(new ProductInLocalCartModel {ProductId = id, Amount = amount});
+    }
+
+
+    private async Task OpenDeleteModal(string id)
+    {
+        var result = await DeleteModal.Open();
+        if (result)
+            await ProductHubService.Delete(id);
+    }
+}

@@ -28,6 +28,7 @@ namespace Dal
 
         public DbSet<ProductEntity> Products { get; set; }
         public DbSet<CartEntity> Carts { get; set; }
+        public DbSet<ProductToCartEntity> ProductToCartEntities { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

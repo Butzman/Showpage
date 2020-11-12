@@ -1,0 +1,30 @@
+﻿@using BlazorClient.Logic.Interfaces.DataServices
+
+@inject ICartDataService CartDataService;
+
+<button class="btn btn-outline-danger mx-4" @onclick="@(OpenModal)">Reset Cart</button>
+
+<Modal
+    @ref="ResetLocalCartModal"
+     ModalId="@_resetLocalCartId"
+     Title="Reset local Cart"
+     CancelButtonText="Cancel"
+     ConfirmButtonText="Reset">
+    <p>Please confirm to reset the local Cart. All unsaved changes will be lost.</p>
+</Modal>
+
+@code {
+    private Modal ResetLocalCartModal { get; set; }
+    private readonly string _resetLocalCartId = Guid.NewGuid().ToString();
+
+    private async Task OpenModal()
+    {
+        var result = await ResetLocalCartModal.Open();
+        if (result)
+            await ResetLocalCart();
+    }
+
+    private async Task ResetLocalCart()
+        => await CartDataService.ResetLoadedCartAsync();
+
+}

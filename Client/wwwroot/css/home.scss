@@ -1,0 +1,19 @@
+﻿@import "bootstrap/bootstrap.custom.scss";
+
+.home-heading{
+  font-family: 'Tomorrow', sans-serif;
+  font-size: 72px;
+  @include media-breakpoint-down(lg) {
+    font-size: 50px;
+  }
+}
+
+.home-img {
+  @include media-breakpoint-up(lg) {
+    height: 754px;
+    top: 100px;
+  }
+  @include  media-breakpoint-down(md){
+    position: relative;
+  }
+}

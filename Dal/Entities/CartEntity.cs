@@ -14,6 +14,7 @@ namespace Dal.Entities
         
         public void Configure(EntityTypeBuilder<CartEntity> builder)
         {
+            builder.HasKey(x => x.Id);
         }
     }
 }

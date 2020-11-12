@@ -13,7 +13,7 @@ namespace Dal.Entities
 
         public void Configure(EntityTypeBuilder<ProductEntity> builder)
         {
-            
+            builder.HasKey(x => x.Id);
         }
     }
 }

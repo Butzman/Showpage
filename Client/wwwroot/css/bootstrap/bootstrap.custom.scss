@@ -1,0 +1,45 @@
+﻿$success: #1AD914;
+$warning: #FFC800;
+$danger: #FF220C;
+$light: #F6F8FF;
+
+
+$navbar-dark-color: rgba(#FFFFFF, .75);
+$navbar-dark-hover-color: rgba(#FFFFFF, .85);
+$navbar-dark-active-color: #FFFFFF;
+$navbar-dark-disabled-color: rgba(#FFFFFF, .4);
+
+.bg-black {
+  background-color: #000000;
+}
+
+.bg-grey {
+  background-color: #8f99a3;
+}
+
+.color-grey {
+  color: #8f99a3;
+}
+
+.font-fam-tomorrow {
+  font-family: 'Tomorrow', sans-serif;
+}
+
+.font-fam-montserrat {
+  font-family: 'Montserrat Light', sans-serif;
+}
+
+.tooltip.bs-tooltip-right  {
+  .arrow::before {
+    border-right-color: $danger;
+  }
+  .tooltip-inner{
+    border: 1px $danger solid;
+  }
+}
+.box-shadow {
+  -webkit-box-shadow: 0 0.75rem 1.25rem 0.0625rem rgba(64,64,64,0.09) !important;
+  box-shadow: 0 0.75rem 1.25rem 0.0625rem rgba(64,64,64,0.09) !important;
+}
+@import '../../lib/bootstrap/scss/bootstrap.scss';
+

@@ -1,0 +1,78 @@
+﻿@using Shared.Dtos
+@using DynamicData.Binding
+@using BlazorClient.Logic.Models
+@using BlazorClient.Logic.Interfaces.Communication.Hub
+@using BlazorClient.Logic.Interfaces.DataServices
+
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject ICartHubService CartHubService
+@inject ICartDataService CartDataService
+
+<div class="dropdown">
+    <button class="btn btn-outline-warning mx-4" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Save Cart</button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <button class="dropdown-item" @onclick="@(Save)" disabled="@(LoadedCartDto == null)" tabindex="-1" aria-disabled="true">Save</button>
+        <button class="dropdown-item" @onclick="@(OpenSaveAsCartModal)">Save as...</button>
+    </div>
+</div>
+
+<FormModal
+    @ref="SaveAsCartModal"
+     TModel="CartDto"
+     Model="@CartDto"
+     ModalId="@_modalCartId"
+     Title="Save Cart"
+     ButtonText="Save">
+    <div class="form-group ">
+        <label for="NameInput">
+            Name:
+        </label>
+        <InputText id="NameInput" class="form-control" @bind-Value="SaveAsCartModal.Model.Name"/>
+    </div>
+</FormModal>
+
+@code {
+
+    [Parameter]
+    public IObservableCollection<ProductInLocalCartListViewModel> Products { get; set; }
+
+    [Parameter]
+    public CartDto LoadedCartDto { get; set; }
+
+    private readonly string _modalCartId = Guid.NewGuid().ToString();
+    private CartDto CartDto { get; set; }
+    private FormModal<CartDto> SaveAsCartModal { get; set; }
+    private string _userId;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        _userId = authState.User.Claims.FirstOrDefault(x => x.Type.Equals("sub"))?.Value;
+
+        CartDto = new CartDto {UserId = _userId, Products = GetProductToCartDtoList()};
+        await base.OnInitializedAsync();
+    }
+
+    private async Task OpenSaveAsCartModal()
+    {
+        var result = await SaveAsCartModal.Open();
+
+        if (!result.IsSuccess) return;
+
+        result.Result.Products = GetProductToCartDtoList();
+        await CartDataService.ChangeLoadedCartIdAsync(result.Result.Id);
+        await CartHubService.Save(result.Result);
+    }
+
+    private IList<ProductToCartDto> GetProductToCartDtoList()
+        => Products.Select(x => new ProductToCartDto {Amount = x.Amount, ProductId = x.ProductId}).ToList();
+
+
+    private async Task Save()
+    {
+        LoadedCartDto.Products = GetProductToCartDtoList();
+        await CartHubService.Save(LoadedCartDto);
+    }
+
+}

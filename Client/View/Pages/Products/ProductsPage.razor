@@ -1,0 +1,100 @@
+﻿@page "/the-showcase"
+@attribute [Authorize]
+
+@using Shared.Dtos
+@using BlazorClient.Logic.Interfaces.Communication.Hub
+@using Microsoft.AspNetCore.Authorization
+
+@inject IJSRuntime JsRuntime
+@inject IProductHubService ProductHubService
+
+<section class="bg-black ">
+    <div class="container bg-content text-center text-md-left">
+        <div class="row justify-content-center">
+                   <div class="col-md-5 mt-5 mb-md-5 ">
+                       <div class="display-4 text-white text-md-left text-center" style="font-weight: 900">
+                           <span class="d-block font-fam-tomorrow ">The</span>
+                           <span class="d-block font-fam-tomorrow ">Showcase!</span>
+                       </div>
+                   </div>
+                   <div class="col-md-5  my-sm-5">
+                       <div class="mb-auto text-white lead text-md-right text-center">
+                           This page provides you a simple product manager. You can create new Products shown in the list,
+                           edit existing product or simply add them to your local shopping cart. Just give it a try!!
+                       </div>
+                   </div>
+               </div>
+               <div class="row  justify-content-center mb-5 pb-4">
+                   <button class="btn btn-outline-success mx-4" @onclick="@(() => OpenProductModal())">Create new Product</button>
+                   <a class="btn btn-outline-warning mx-4" href="/local-cart" >Go to Cart</a>
+               </div>
+    </div>
+</section>
+<section class="container position-relative" style="margin-top: -40px">
+    <div class="bg-white box-shadow py-5 px-4 px-sm-5">
+        <ProductList OpenProductModal="@(OpenProductModal)"/>
+    </div>
+</section>
+
+<FormModal
+    TModel="ProductDto"
+    @ref="@ProductModal"
+    ModalId="@_productModalId"
+    Model="@ProductDto"
+    Title="@ModalTitleText"
+    ButtonText="@ModalButtonText">
+    <div class="form-group ">
+        <label for="NameInput">
+            Name:
+        </label>
+        <InputText id="NameInput" class="form-control" @bind-Value="ProductDto.Name"/>
+    </div>
+    <div class="form-group">
+        <label for="EANInput">
+            EAN:
+        </label>
+        <InputText id="EANInput" class="form-control" @bind-Value="ProductDto.EAN"/>
+    </div>
+    <div class="form-group">
+        <label for="DescriptionInput">
+            Description:
+        </label>
+        <InputTextArea id="DescriptionInput" class="form-control" @bind-Value="ProductDto.Description"/>
+    </div>
+</FormModal>
+
+
+@code
+{
+    private readonly string _productModalId = Guid.NewGuid().ToString();
+
+    private FormModal<ProductDto> ProductModal { get; set; }
+    private ProductDto ProductDto { get; set; }
+    private string ModalButtonText { get; set; }
+    private string ModalTitleText { get; set; }
+
+
+    private async void OpenProductModal(ProductDto productDto = null)
+    {
+        if (productDto != null)
+        {
+            ProductDto = new ProductDto(productDto); 
+            ModalTitleText = "Edit Product";
+            ModalButtonText = "Edit";
+        }
+        else
+        {
+            ProductDto = new ProductDto();
+            ModalTitleText = "Create new Product";
+            ModalButtonText = "Create";
+        }
+        StateHasChanged();
+        
+        var result = await ProductModal.Open();
+        
+        if(!result.IsSuccess) return;
+        
+        await ProductHubService.Save(result.Result);
+        StateHasChanged();
+    }
+}

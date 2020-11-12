@@ -1,0 +1,64 @@
+﻿@using System.Reactive.Subjects
+@using System.Reactive.Linq
+@using Shared.Extensions
+
+@inherits BlazorClient.Logic.View.ComponentDisposableBase
+
+<div id="@_id" class="input-group m-auto" style="max-width: 6rem">
+    <div class="input-group-prepend">
+        <button class="btn btn-sm btn-outline-primary" @onclick="@Decrease" disabled="@(_decreaseButtonDisabled || Disabled)">-</button>
+    </div>
+    <input type="number" class="form-control form-control-sm text-center" value="@Value" @onchange="@(OnChange)" disabled="@Disabled">
+    <div class="input-group-append">
+        <button class="btn btn-sm btn-outline-primary" @onclick="@Increase" disabled="@Disabled">+</button>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public int Value { get; set; }
+
+    [Parameter]
+    public Action<int> OnValueChanged { get; set; }
+
+    [Parameter]
+    public bool CanBeSmallerThenOne { get; set; } = false;
+
+    [Parameter]
+    public bool Disabled { get; set; } = false;
+
+    private string _id = Guid.NewGuid().ToString();
+    private bool _decreaseButtonDisabled = false;
+
+    protected override void OnInitialized()
+    {
+        if (!CanBeSmallerThenOne && Value <= 1)
+            _decreaseButtonDisabled = true;
+
+        base.OnInitialized();
+    }
+
+    private void Increase()
+    {
+        if (_decreaseButtonDisabled)
+            _decreaseButtonDisabled = false;
+        OnValueChanged(Value + 1);
+    }
+
+
+    private void Decrease()
+    {
+        if (!CanBeSmallerThenOne && Value <= 1)
+        {
+            _decreaseButtonDisabled = true;
+            return;
+        }
+
+        OnValueChanged(Value - 1);
+    }
+
+    private void OnChange(ChangeEventArgs args)
+        => OnValueChanged(int.Parse((string) args.Value));
+
+}

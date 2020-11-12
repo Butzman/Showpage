@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using AutoMapper;
+using AutoMapper.EquivalencyExpression;
 using Backend_Shared.Models;
 using Dal.Entities;
 using Shared.Dtos;
@@ -25,24 +26,27 @@ namespace Dal
                     memberOptions => memberOptions.MapFrom(cartModel => cartModel.Products)
                 );
 
-            CreateMap<ProductToCartModel, ProductToCartEntity>()
-                .ForMember(
-                    entity => entity.Amount,
-                    memberOptions => memberOptions.MapFrom(model => model.Amount)
-                )
-                .ForMember(
-                    entity => entity.ProductId,
-                    memberOptions => memberOptions.MapFrom(model => model.ProductId)
-                );
-            CreateMap<ProductToCartEntity, ProductToCartModel>()
-                .ForMember(
-                    model => model.Amount,
-                    memberOptions => memberOptions.MapFrom(entity => entity.Amount)
-                )
-                .ForMember(
-                    model => model.ProductId,
-                    memberOptions => memberOptions.MapFrom(entity => entity.ProductId)
-                );
+            // CreateMap<ProductToCartModel, ProductToCartEntity>()
+            //     .ForMember(
+            //         entity => entity.Amount,
+            //         memberOptions => memberOptions.MapFrom(model => model.Amount)
+            //     )
+            //     .ForMember(
+            //         entity => entity.ProductId,
+            //         memberOptions => memberOptions.MapFrom(model => model.ProductId)
+            //     );
+            // CreateMap<ProductToCartEntity, ProductToCartModel>()
+            //     .ForMember(
+            //         model => model.Amount,
+            //         memberOptions => memberOptions.MapFrom(entity => entity.Amount)
+            //     )
+            //     .ForMember(
+            //         model => model.ProductId,
+            //         memberOptions => memberOptions.MapFrom(entity => entity.ProductId)
+            //     );
+            CreateMap<ProductToCartModel, ProductToCartEntity>(MemberList.Source)
+                .EqualityComparison((m, e) => e.ProductId.Equals(m.ProductId));
+            CreateMap<ProductToCartEntity, ProductToCartModel>();
         }
     }
 }

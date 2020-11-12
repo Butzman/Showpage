@@ -51,11 +51,10 @@ namespace Dal.Services.Base
             if (entity == null)
             {
                 entity = _mapper.Map<TEntity>(model);
-                context.Set<TEntity>().Add(entity);
-                return entity;
+                return context.Set<TEntity>().AddAsync(entity).Result.Entity;
             }
 
-            entity = _mapper.Map(model, entity);
+            _mapper.Map(model, entity);
             return context.Set<TEntity>().Update(entity).Entity;
         }
 

@@ -1,0 +1,93 @@
+﻿@page "/local-cart"
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+
+@using BlazorClient.Logic.Interfaces.DataServices
+@using BlazorClient.Logic.Models
+@using DynamicData
+@using Shared.Extensions
+@using System.Reactive.Linq
+@using DynamicData.Binding
+@using Shared.Dtos
+
+@inherits BlazorClient.Logic.View.ComponentDisposableBase
+
+@inject ICartDataService CartDataService
+@inject IProductDataService ProductDataService
+
+@inject IJSRuntime JsRuntime
+
+
+<section class="bg-black">
+    <div class="container text-center text-md-left">
+        <div class="row justify-content-center">
+            <div class="col-md-5 mt-5 mb-md-5 ">
+                <div class="display-4 text-white text-md-left text-center" style="font-weight: 900">
+                    <span class="d-block font-fam-tomorrow ">The local</span>
+                    <span class="d-block font-fam-tomorrow ">Cart...</span>
+                </div>
+            </div>
+            <div class="col-md-5  my-sm-5">
+                <div class="mb-auto text-white lead text-md-right text-center">
+                    Here you can find a collection of your added items. The added items are first saved locally in the browser.
+                    However, the user can also save them in the database and retrieve them later using the set name.
+                </div>
+            </div>
+        </div>
+        <div class="row  justify-content-center mb-5 pb-4">
+            <LoadCart/>
+            <SaveCart Products="@Products" LoadedCartDto="@_loadedCartDto"/>
+            <ResetCart/>
+        </div>
+    </div>
+</section>
+<section class="container position-relative" style="margin-top: -40px">
+    <div class="row bg-white box-shadow py-5 px-4 px-sm-5">
+        <div class="col">
+            <div class="row justify-content-center">
+                <div class="font-fam-tomorrow  text-muted" style="font-size: 2rem">@(_loadedCartDto != null ? _loadedCartDto.Name : "Unsaved Cart")</div>
+            </div>
+            <hr class="mb-5 mt-0" style="border: 1px gray solid; width: 200px">
+            <div class="row">
+                <ProductInCartList Products="@Products"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+@code {
+
+    private IObservableCollection<ProductInLocalCartListViewModel> Products { get; }
+        = new ObservableCollectionExtended<ProductInLocalCartListViewModel>();
+
+    private CartDto _loadedCartDto;
+
+
+    protected override void OnInitialized()
+    {
+        CartDataService.LocalCartSourceCache
+            .Connect()
+            .LeftJoin(ProductDataService.ModelCache.Connect(), p => p.Id, (toCart, product) => new ProductInLocalCartListViewModel
+            {
+                Amount = toCart.Amount,
+                ProductId = toCart.ProductId,
+                Name = product.HasValue ? product.Value.Name : "Product not available",
+                EAN = product.HasValue ? product.Value.EAN : ""
+            })
+            .Bind(Products)
+            .Do(_ => StateHasChanged())
+            .Subscribe()
+            .DisposeWith(this);
+
+        CartDataService.LoadedCartDtoObservable
+            .Subscribe(x =>
+            {
+                _loadedCartDto = x;
+                StateHasChanged();
+            })
+            .DisposeWith(this);
+
+        base.OnInitializedAsync();
+    }
+
+}

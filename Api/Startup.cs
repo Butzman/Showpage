@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using Api.Communication.Hubs;
 using Api.Communication.Interfaces;
@@ -20,7 +19,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Shared.Helpers;
-using IConfigurationProvider = Microsoft.Extensions.Configuration.IConfigurationProvider;
 
 namespace Api
 {

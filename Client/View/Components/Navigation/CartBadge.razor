@@ -1,0 +1,62 @@
+﻿@using BlazorClient.Logic.Interfaces.DataServices
+@using Shared.Extensions
+@using System.Reactive.Linq
+
+@inherits BlazorClient.Logic.View.ComponentDisposableBase
+
+@inject NavigationManager Navigation
+@inject ICartDataService CartDataService
+
+@if (IsButtonShown)
+{
+<AuthorizeView>
+    <Authorized>
+
+        <button id="CartButton" type="button" class="btn btn-sm btn-outline-warning @(IsButtonActive ? "active" : "")" @onclick="@NavigateTo">
+            Cart
+            <span class="badge badge-sm badge-warning">
+                @NumberOfItems
+            </span>
+        </button>
+    </Authorized>
+</AuthorizeView>
+}
+
+
+@code {
+    private bool IsButtonActive { get; set; }
+    private bool IsButtonShown { get; set; }
+    private int NumberOfItems { get; set; }
+
+    
+    
+    protected override void OnInitialized()
+    {
+        IsButtonShown = Navigation.Uri.Contains("/local-cart") || Navigation.Uri.Contains("/the-showcase");
+        IsButtonActive = Navigation.Uri.Contains("/local-cart");
+        
+        Navigation.LocationChanged += (sender, args) =>
+        {
+            IsButtonShown = args.Location.Contains("/local-cart") || args.Location.Contains("/the-showcase");
+            IsButtonActive = args.Location.Contains("/local-cart");
+            StateHasChanged();
+        };
+
+        CartDataService
+            .LocalCartSourceCache
+            .CountChanged
+            .Skip(1)
+            .Subscribe(x =>
+            {
+                NumberOfItems = x;
+                StateHasChanged();
+            })
+            .DisposeWith(this);
+
+        base.OnInitialized();
+    }
+
+    private void NavigateTo()
+        => Navigation.NavigateTo("/local-cart");
+
+}
