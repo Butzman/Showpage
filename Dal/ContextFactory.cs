@@ -24,14 +24,16 @@ namespace Dal
         {
             var environmentVariable = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
             var filename = "appsettings." + environmentVariable + ".json";
-           var settingsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename);
+            var settingsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename);
 
-            var builderConfiguration = new ConfigurationBuilder()
+            var configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(settingsPath);
+                .AddJsonFile(settingsPath)
+                .Build();
 
-            var configuration = builderConfiguration.Build();
-            var connectionString = "Data Source=" + Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), configuration.GetConnectionString("DataBase"));
+            var databasePath = environmentVariable == "Production" ? "/data" : Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
+            var connectionString = "Data Source=" + Path.Combine(databasePath, "Showpage", configuration.GetConnectionString("DataBase"));
             var dbContextOptionsBuilder = new DbContextOptionsBuilder<DalContext>();
             return dbContextOptionsBuilder.UseSqlite(connectionString);
         }
