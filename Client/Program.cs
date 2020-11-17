@@ -30,6 +30,7 @@ namespace BlazorClient
 
             var authorityUrl = builder.Configuration.GetValue<string>("Urls:IdentityServer");
             var clientUrl = builder.Configuration.GetValue<string>("Urls:Client");
+            Console.WriteLine(clientUrl);
             builder.Services.AddOidcAuthentication(options =>
             {
                 options.ProviderOptions.ClientId = "blazor_client";
